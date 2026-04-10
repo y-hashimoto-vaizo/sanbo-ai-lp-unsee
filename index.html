@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANBO AI（参謀AI）｜中小企業のためのAI導入支援｜株式会社VAIZO</title>
+<meta name="description" content="社員10人、IT担当ゼロでも始められるAI導入支援。月5万円のAI経営顧問から、AI部門の丸ごとアウトソーシングまで。初期費用0円。">
+<meta property="og:title" content="SANBO AI — 中小企業のためのAI導入支援">
+<meta property="og:description" content="中小企業に、産業革命を。月5万円から、AI経営顧問が貴社につきます。">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://vaizo.jp/images/favicon.svg" type="image/svg+xml">
+<style>
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.7;
+  font-size: 16px;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Utility ── */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-family: inherit;
+}
+.btn-white { background: #fff; color: #111; }
+.btn-white:hover { background: #eee; }
+.btn-white-outline { background: transparent; color: #fff; border: 2px solid #fff; }
+.btn-white-outline:hover { background: #fff; color: #111; }
+.btn-primary { background: #e67e22; color: #fff; box-shadow: 0 8px 24px rgba(230,126,34,0.4); }
+.btn-primary:hover { background: #cf6d16; }
+.btn-cta-orange { background: #e67e22; color: #fff; box-shadow: 0 8px 24px rgba(230,126,34,0.4); }
+.btn-cta-orange:hover { background: #cf6d16; }
+.btn-outline-orange { background: transparent; color: #e67e22; border: 2px solid #e67e22; }
+.btn-outline-orange:hover { background: #e67e22; color: #fff; }
+.btn-sm { padding: 10px 24px; font-size: 13px; }
+.btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* ── Sticky Header ── */
+.header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.0);
+  backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+}
+.header.scrolled {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom-color: #eee;
+}
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #fff;
+  transition: color 0.4s;
+}
+.header.scrolled .logo { color: #111; }
+.nav { display: flex; gap: 32px; align-items: center; }
+.nav a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.4s;
+}
+.header.scrolled .nav a { color: #555; }
+.nav a:hover { opacity: 0.8; }
+.header.scrolled .nav a:hover { color: #111; }
+.nav .btn {
+  color: #fff !important;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.4s, transform 0.4s, background 0.2s;
+  pointer-events: none;
+}
+.header.scrolled .nav .btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.4s;
+}
+.header.scrolled .menu-toggle { color: #111; }
+
+/* ── Hero ── */
+.hero {
+  padding: 180px 0 120px;
+  background: #111;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+#hero-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-label {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: #888;
+  margin-bottom: 24px;
+  display: block;
+}
+.hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  max-width: 720px;
+}
+.hero-title span {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  color: #aaa;
+  margin-top: 16px;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+.hero-desc {
+  font-size: 17px;
+  color: #999;
+  max-width: 560px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+.hero-sub {
+  font-size: 13px;
+  color: #666;
+  margin-top: 16px;
+}
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.hero-stat-num { font-size: 36px; font-weight: 800; }
+.hero-stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+
+/* Hero entrance */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-label { animation: fadeIn 1s ease 0.2s both; }
+.hero-title { animation: fadeUp 1s ease 0.4s both; }
+.hero-desc { animation: fadeUp 1s ease 0.7s both; }
+.hero .btn-group { animation: fadeUp 1s ease 1s both; }
+.hero-sub { animation: fadeIn 1s ease 1.2s both; }
+.hero-stats { animation: fadeIn 1.2s ease 1.4s both; }
+.hero-stats > div:nth-child(1) { animation: fadeUp 0.8s ease 1.6s both; }
+.hero-stats > div:nth-child(2) { animation: fadeUp 0.8s ease 1.8s both; }
+.hero-stats > div:nth-child(3) { animation: fadeUp 0.8s ease 2.0s both; }
+
+/* ── Sections ── */
+.section { padding: 100px 0; }
+.section-dark { background: #111; color: #fff; }
+.section-gray { background: #f5f5f5; }
+.text-center { text-align: center; }
+.section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #999; margin-bottom: 8px; }
+.section-dark .section-label { color: #666; }
+.section-title { font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 20px; }
+.section-desc { font-size: 16px; color: #666; max-width: 640px; margin: 0 auto 48px; }
+.section-dark .section-desc { color: #999; }
+
+/* ── Cards ── */
+.card-grid { display: grid; gap: 24px; }
+.card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.card { border: 1px solid #eee; padding: 32px; transition: background 0.2s; }
+.card:hover { background: #f9f9f9; }
+.card-num { font-size: 48px; font-weight: 900; color: #eee; margin-bottom: 16px; }
+.card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+.card p { font-size: 14px; color: #666; line-height: 1.7; }
+.card-dark { background: #111; border-color: #222; }
+.card-dark:hover { background: #1a1a1a; }
+.card-dark .card-num { color: #333; }
+.card-dark p { color: #aaa; }
+
+/* ── Flow ── */
+.flow-steps { display: flex; gap: 0; counter-reset: step; }
+.flow-step { flex: 1; padding: 32px 24px; border: 1px solid #eee; counter-increment: step; }
+.flow-step::before { content: counter(step, decimal-leading-zero); font-size: 48px; font-weight: 900; color: #111; display: block; margin-bottom: 16px; }
+.flow-step h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.flow-step p { font-size: 13px; color: #666; line-height: 1.7; }
+
+/* ── Pricing ── */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.pricing-card { border: 1px solid #ddd; padding: 48px 32px; text-align: center; }
+.pricing-card-pop { background: #111; color: #fff; border-color: #111; transform: scale(1.02); position: relative; }
+.pricing-badge { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: #fff; color: #111; font-size: 11px; font-weight: 700; padding: 4px 16px; letter-spacing: 0.1em; }
+.pricing-name { font-size: 14px; letter-spacing: 0.1em; color: #999; margin-bottom: 8px; }
+.pricing-card-pop .pricing-name { color: #888; }
+.pricing-price { font-size: 40px; font-weight: 900; margin-bottom: 4px; }
+.pricing-price span { font-size: 16px; font-weight: 400; }
+.pricing-unit { font-size: 13px; color: #999; margin-bottom: 32px; }
+.pricing-features { list-style: none; text-align: left; margin-bottom: 24px; }
+.pricing-features li { font-size: 14px; padding: 10px 0; border-bottom: 1px solid #eee; }
+.pricing-card-pop .pricing-features li { border-color: #333; color: #ccc; }
+.pricing-features li::before { content: '\2713\0020'; font-weight: 700; }
+.pricing-contract { font-size: 12px; color: #999; }
+
+/* ── FAQ ── */
+.faq-item { border-bottom: 1px solid #ddd; padding: 24px 0; }
+.faq-q { font-size: 16px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-q::before { content: 'Q.'; margin-right: 12px; color: #999; flex-shrink: 0; }
+.faq-toggle { font-size: 24px; color: #ccc; transition: transform 0.3s; flex-shrink: 0; }
+.faq-a { font-size: 14px; color: #666; padding: 16px 0 0 28px; line-height: 1.8; display: none; }
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+/* ── Form ── */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 720px; margin: 0 auto; }
+.form-group { display: flex; flex-direction: column; }
+.form-label { font-size: 13px; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.05em; }
+.form-label .req { font-size: 10px; background: #111; color: #fff; padding: 2px 6px; margin-left: 6px; vertical-align: middle; }
+.form-input, .form-select, .form-textarea {
+  padding: 14px 16px; border: 1px solid #ddd; font-size: 15px;
+  font-family: inherit; background: #fff; transition: border-color 0.2s; border-radius: 0;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: #111; }
+.form-textarea { resize: vertical; min-height: 120px; }
+
+/* ── Visual Break ── */
+.visual-break {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+.visual-break::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(17,17,17,0.7);
+}
+.visual-break-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 24px;
+}
+.visual-break-content .stat-big {
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.visual-break-content .stat-label {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 12px;
+}
+
+/* ── CTA Section ── */
+.cta-section { padding: 80px 0; background: #111; color: #fff; text-align: center; }
+.cta-title { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+.cta-desc { font-size: 16px; color: #999; margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+/* ── Footer ── */
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-bottom { border-top: 1px solid #333; padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: #666; flex-wrap: wrap; gap: 8px; }
+
+/* ── Responsive helper ── */
+.br-desktop { display: inline; }
+.br-mobile { display: none; }
+
+/* ── WHY reasons (responsive) ── */
+.why-reason { display: flex; gap: 32px; padding: 40px 0; border-bottom: 1px solid #eee; }
+.why-reason:last-child { border-bottom: none; }
+.why-num { font-size: 64px; font-weight: 900; color: #eee; line-height: 1; flex-shrink: 0; }
+.why-content h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.why-content p { font-size: 14px; color: #666; line-height: 1.8; }
+
+/* ── Case card Before→After (responsive) ── */
+.case-ba { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.case-before { font-size: 24px; color: #666; text-decoration: line-through; }
+.case-arrow { font-size: 20px; color: #666; }
+.case-after { font-size: 42px; font-weight: 900; color: #fff; }
+
+/* ── Architecture (responsive) ── */
+.arch-row { display: flex; justify-content: center; gap: 0; max-width: 600px; margin: 0 auto; }
+.arch-cell { flex: 1; border: 1px solid #eee; padding: 20px; text-align: center; }
+.arch-cell-dashed { border-style: dashed; }
+
+/* ── Trust bar (responsive) ── */
+.trust-person { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.trust-photo { width: 80px; height: 80px; border-radius: 50%; background: #f0f0f0; flex-shrink: 0; overflow: hidden; }
+.trust-photo img { width: 100%; height: 100%; object-fit: cover; }
+.trust-info { flex: 1; min-width: 240px; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero { padding: 140px 0 80px; }
+  .hero-title { font-size: 30px; }
+  .hero-title span { font-size: 16px; }
+  .hero-desc { font-size: 15px; }
+  .hero-desc br { display: none; }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+  .hero-stat-num { font-size: 28px; }
+  .section-title { font-size: 24px; }
+  .section-title br { display: none; }
+  .section-desc br { display: none; }
+  .cta-title { font-size: 22px; }
+  .cta-desc br { display: none; }
+  .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+  #demo .container > div:last-child { grid-template-columns: 1fr 1fr; }
+  #demo .container > div:last-child > div { padding: 20px 18px; }
+  .flow-steps { flex-direction: column; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card-pop { transform: none; }
+  .form-grid { grid-template-columns: 1fr; }
+  .visual-break { height: 280px; background-attachment: scroll; }
+  .visual-break-content .stat-big { font-size: 36px; }
+  .visual-break-content .stat-label { font-size: 14px; }
+  .why-reason { flex-direction: column; gap: 8px; }
+  .why-num { font-size: 48px; }
+  .case-before { font-size: 18px; }
+  .case-after { font-size: 32px; }
+  .arch-row { flex-direction: column; max-width: 300px; }
+  .trust-person { gap: 16px; }
+  .trust-photo { width: 64px; height: 64px; }
+  .trust-info { min-width: 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .br-desktop { display: none; }
+  .br-mobile { display: inline; }
+  .nav { display: none; }
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    background: #fff;
+    padding: 24px;
+    border-bottom: 1px solid #eee;
+    gap: 16px;
+  }
+  .nav.open a { color: #555 !important; }
+  .nav.open .btn { opacity: 1 !important; pointer-events: auto !important; transform: none !important; }
+  .menu-toggle { display: block; }
+  .btn-group { flex-direction: column; }
+  .btn { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="logo"><a href="#">SANBO AI</a></div>
+    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav" id="nav">
+      <a href="#problem">課題</a>
+      <a href="#service">サービス</a>
+      <a href="#demo">使い方</a>
+      <a href="#pricing">料金</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary btn-sm">無料で相談してみる</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="container">
+    <span class="hero-label">SANBO AI — 中小企業向け AI導入支援</span>
+    <h1 class="hero-title">
+      中小企業に、<br>産業革命を。
+      <span>月5万円から。AI経営顧問 → 導入伴走 → AI部門構築まで。</span>
+    </h1>
+    <p class="hero-desc">
+      広報も、採用も、経営戦略も。<br>
+      貴社の参謀AIが、守備範囲を広げながら経営を支えます。
+    </p>
+    <div class="btn-group">
+      <a href="#contact" class="btn btn-cta-orange">30分の無料相談で、貴社のAI活用プランが分かる</a>
+      <a href="#" class="btn btn-white-outline">3分でわかるサービス資料</a>
+    </div>
+    <div class="hero-sub">初期費用0円 ｜ 無料体験あり ｜ IT知識不要</div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">月5万〜</div>
+        <div class="hero-stat-label">スタータープラン</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">90%</div>
+        <div class="hero-stat-label">バックオフィス工数削減</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">0円</div>
+        <div class="hero-stat-label">初期費用</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" style="padding:64px 0;">
+  <div class="container">
+    <p class="section-label text-center">TEAM</p>
+    <h2 class="section-title text-center" style="font-size:28px;">このチームが、貴社のAI導入を支えます。</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;">
+
+      <!-- 左上: 橋本 -->
+      <div style="padding:32px; border:1px solid #eee; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
+          <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="images/hashimoto-yutaro.jpg" alt="橋本 友太郎" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-size:11px; color:#e67e22; letter-spacing:0.1em; font-weight:700;">FOUNDER & ARCHITECT</div>
+            <div style="font-size:16px; font-weight:800;">橋本 友太郎</div>
+            <div style="font-size:12px; color:#999;">株式会社VAIZO 代表取締役CEO</div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:#666; line-height:1.8;">上場企業の経営戦略室で、買収・売却の実務まで累計850億円超を手がけた経営のプロ。数百社の中小企業の「業務の中身」を見てきた人間が、参謀AIの全体構想と事業設計を手がけています。</p>
+      </div>
+
+      <!-- 右上: 櫻井 -->
+      <div style="padding:32px; border:1px solid #eee; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
+          <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="images/sakurai-riya.jpg" alt="櫻井 理也" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-size:11px; color:#e67e22; letter-spacing:0.1em; font-weight:700;">TECHNOLOGY</div>
+            <div style="font-size:16px; font-weight:800;">櫻井 理也</div>
+            <div style="font-size:12px; color:#999;">株式会社VAIZO Co-CTO｜東北大学大学院 AI研究</div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:#666; line-height:1.8;">東北大学大学院にてAI研究に従事。AIエージェント設計とMCPの専門家として、学術的知見に裏打ちされた技術で、複雑なAI技術を中小企業がそのまま使えるシンプルな形に落とし込んでいます。</p>
+      </div>
+
+      <!-- 左下: 浅井 -->
+      <div style="padding:32px; border:1px solid #eee; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
+          <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="images/asai_prof.png" alt="浅井 深志" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-size:11px; color:#e67e22; letter-spacing:0.1em; font-weight:700;">PRODUCT DIRECTION & QA</div>
+            <div style="font-size:16px; font-weight:800;">浅井 深志</div>
+            <div style="font-size:12px; color:#999;">株式会社UNSEE 代表取締役｜共同開発パートナー</div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:#666; line-height:1.8;">東北大学卒業後、起業。中小企業から日本を代表するナショナルブランド・大企業まで、数多くの新規事業・DX開発プロジェクトで採用されるプロダクトを納品してきた実績を持つ。その品質基準を参謀AIにも適用しています。</p>
+      </div>
+
+      <!-- 右下: 増子 -->
+      <div style="padding:32px; border:1px solid #eee; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
+          <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="images/mashiko_prof.png" alt="増子 涼太" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-size:11px; color:#e67e22; letter-spacing:0.1em; font-weight:700;">SALES & PRODUCT FEEDBACK</div>
+            <div style="font-size:16px; font-weight:800;">増子 涼太</div>
+            <div style="font-size:12px; color:#999;">株式会社UNSEE COO｜共同開発パートナー</div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:#666; line-height:1.8;">Webマーケからシステム開発・飲食まで多業種の経営と営業を歴任。お客様の声を最も近くで聴き、貴社の課題に合わせたオーダーメイド導入を行うと同時に、現場の声をプロダクト改善に還元し続けています。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section section-dark" id="problem">
+  <div class="container">
+    <p class="section-label text-center">PROBLEM</p>
+    <h2 class="section-title text-center">これ、あなたの会社で<br>起きていませんか？</h2>
+    <p class="section-desc text-center">AI時代の中小企業が直面する、4つの壁。</p>
+    <div class="card-grid card-grid-2">
+      <div class="card card-dark">
+        <div class="card-num">01</div>
+        <h3>毎晩23時。<br>やっていることは先月と同じ。</h3>
+        <p>経営者なのに、経営する時間がない。目の前の業務に殺されて、会社の将来を考える余裕がゼロ。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="card-num">02</div>
+        <h3>ChatGPTは触った。<br>で、うちの何に使うの？</h3>
+        <p>AIがすごいのは分かった。でも自分の会社のどの業務にどう使えばいいのか、誰も教えてくれない。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="card-num">03</div>
+        <h3>AIを入れたのに、<br>使っているのは自分だけ。</h3>
+        <p>部長陣は「今まで通り」のやり方を変えない。ツールは入ったが、活用されないまま月額だけが消えていく。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="card-num">04</div>
+        <h3>AIエンジニアが欲しい。<br>でも年収800万は無理。</h3>
+        <p>採用費まで入れると年間1,000万円以上。中小企業にはとても現実的じゃない。</p>
+      </div>
+    </div>
+    <p class="text-center" style="margin-top:48px; font-size:15px; color:#aaa;">この4つのうち、1つでも心当たりがあるなら。<br><strong style="color:#fff;">SANBO AI（参謀AI）は、あなたのために作りました。</strong></p>
+  </div>
+</section>
+
+<!-- VISUAL BREAK 1 -->
+<div class="visual-break" style="background-image:url('images/new3-tablet.jpg');">
+  <div class="visual-break-content">
+    <div class="stat-big">月5万円〜</div>
+    <div class="stat-label">AIに詳しい参謀が、貴社につきます。初月無料。</div>
+  </div>
+</div>
+
+<!-- SERVICE -->
+<section class="section" id="service">
+  <div class="container">
+    <p class="section-label text-center">SERVICE</p>
+    <h2 class="section-title text-center">10人の会社に、<br>100人のプロを。</h2>
+    <p class="section-desc text-center">聞かれたら答えるAIではありません。<br>「社長、今これをやるべきです」と自ら提案してくる参謀です。</p>
+
+    <div class="card-grid card-grid-3">
+      <div class="card" style="border-top:3px solid #111;">
+        <div style="font-size:11px; letter-spacing:0.15em; color:#999; margin-bottom:16px;">FEATURE 01</div>
+        <h3>「考えてくれる」<br>能動型AI</h3>
+        <p>従来のAIは聞いたら答える。参謀AIは違います。貴社の業務データを毎日定点観測し、「今日やるべきこと」を自ら提案します。レビューと提案は毎日。求めれば1時間に1回の頻度でも対応可能です。</p>
+      </div>
+      <div class="card" style="border-top:3px solid #111;">
+        <div style="font-size:11px; letter-spacing:0.15em; color:#999; margin-bottom:16px;">FEATURE 02</div>
+        <h3>提案して終わりじゃない。<br>実行まで一気通貫。</h3>
+        <p>「この投稿を出しましょう」と提案すると同時に、下書きと実行ボタンがセットで届きます。承認したら即実行。提案から実行までの距離がゼロ。だから成果が出ます。</p>
+      </div>
+      <div class="card" style="border-top:3px solid #111;">
+        <div style="font-size:11px; letter-spacing:0.15em; color:#999; margin-bottom:16px;">FEATURE 03</div>
+        <h3>守備範囲が増える。<br>参謀が育つ。</h3>
+        <p>広報、採用、経営戦略——参謀AIの守備範囲は順次拡大していきます。使えば使うほど、貴社の文脈を理解し、提案の精度が上がる。参謀が成長する設計です。</p>
+      </div>
+    </div>
+
+    <!-- Architecture visual -->
+    <div style="margin-top:64px; text-align:center;">
+      <div style="display:inline-block; background:#111; color:#fff; padding:20px 40px; font-size:18px; font-weight:800;">参謀AI</div>
+      <div style="font-size:13px; color:#999; margin-top:4px;">経営戦略 / 意思決定支援 / 優先順位の判断</div>
+      <div style="width:2px; height:32px; background:#ddd; margin:0 auto;"></div>
+      <div class="arch-row">
+        <div class="arch-cell">
+          <div style="font-size:14px; font-weight:700; margin-bottom:4px;">広報AI</div>
+          <div style="font-size:12px; color:#999;">発信提案・下書き・効果分析</div>
+        </div>
+        <div class="arch-cell">
+          <div style="font-size:14px; font-weight:700; margin-bottom:4px;">採用AI</div>
+          <div style="font-size:12px; color:#999;">求人票作成・候補者アプローチ</div>
+        </div>
+        <div class="arch-cell arch-cell-dashed">
+          <div style="font-size:14px; font-weight:700; margin-bottom:4px; color:#999;">+今後拡大</div>
+          <div style="font-size:12px; color:#ccc;">守備範囲は継続的に追加</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO UI -->
+<section class="section section-gray" id="demo">
+  <div class="container">
+    <h2 class="section-title text-center">操作はたった4ステップ</h2>
+    <p style="text-align:center; color:#666; margin-bottom:48px;">フォルダを選び、指示を出すだけ。AI社員が提案・作成・保存まで完結します。</p>
+
+    <div style="margin-bottom:56px; border-radius:12px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.15);">
+      <img src="images/sanbo-demo-ui.png" alt="SANBO AI 操作画面" style="width:100%; display:block;">
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
+      <div style="background:#fff; border-radius:8px; padding:28px 24px; border:1px solid #eee;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <div style="width:36px; height:36px; background:#111; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0;">1</div>
+          <div style="font-weight:800; font-size:15px;">FOLDER</div>
+        </div>
+        <p style="font-size:14px; color:#555; line-height:1.8;">フォルダを選ぶと、そのフォルダ専属の<strong>AI社員</strong>が立ち上がります。</p>
+      </div>
+      <div style="background:#fff; border-radius:8px; padding:28px 24px; border:1px solid #eee;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <div style="width:36px; height:36px; background:#111; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0;">2</div>
+          <div style="font-weight:800; font-size:15px;">ROLE SETTING</div>
+        </div>
+        <p style="font-size:14px; color:#555; line-height:1.8;">AI社員の役割を対話で調整。指示するたびに学習し、次回の提案精度が上がります。</p>
+      </div>
+      <div style="background:#fff; border-radius:8px; padding:28px 24px; border:1px solid #eee;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <div style="width:36px; height:36px; background:#111; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0;">3</div>
+          <div style="font-weight:800; font-size:15px;">WORK INSTRUCTION</div>
+        </div>
+        <p style="font-size:14px; color:#555; line-height:1.8;">メインの作業場。AI社員の提案カードから選ぶか、自分で自由に指示するだけ。</p>
+      </div>
+      <div style="background:#fff; border-radius:8px; padding:28px 24px; border:1px solid #eee;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <div style="width:36px; height:36px; background:#111; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0;">4</div>
+          <div style="font-weight:800; font-size:15px;">OUTPUT</div>
+        </div>
+        <p style="font-size:14px; color:#555; line-height:1.8;">成果物をSlide / PDF / MDで即プレビュー。保存・共有もワンクリックで完結。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MULTI AI -->
+<section class="section section-dark" id="multi-ai">
+  <div class="container">
+    <p class="section-label text-center">PARALLEL AI TEAM</p>
+    <h2 class="section-title text-center">4人のAI社員が、<br>同時に働く。</h2>
+    <p class="section-desc text-center">営業報告、提案書、競合分析、経営戦略——<br>それぞれの専門AI社員が、同時並行で成果物を生成。<br>1人の社長が、4つの部署を同時に動かせます。</p>
+
+    <div style="margin-bottom:48px; border-radius:12px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.4); border:1px solid #333;">
+      <img src="images/sanbo-multi-ai.png" alt="4人のAI社員が同時稼働" style="width:100%; display:block;">
+    </div>
+
+    <div class="card-grid card-grid-3">
+      <div class="card card-dark">
+        <div style="font-size:32px; font-weight:900; color:#e67e22; margin-bottom:8px;">4人同時</div>
+        <p>フォルダごとに専属AI社員が立ち上がり、並列で作業。待ち時間ゼロ。</p>
+      </div>
+      <div class="card card-dark">
+        <div style="font-size:32px; font-weight:900; color:#e67e22; margin-bottom:8px;">経営方針を共有</div>
+        <p>全AI社員が同じ経営方針コンテキストで動く。判断のブレがない。</p>
+      </div>
+      <div class="card card-dark">
+        <div style="font-size:32px; font-weight:900; color:#e67e22; margin-bottom:8px;">増員自由</div>
+        <p>業務が増えたらAI社員を追加するだけ。採用コストも教育期間もゼロ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section class="cta-section" style="background:linear-gradient(135deg, #0a0a0a, #1a1a2e);">
+  <div class="container" style="text-align:center;">
+    <div class="cta-title">「うちでもできるのかな」と思ったら。</div>
+    <p class="cta-desc">30分のオンライン面談で、貴社の業務を一緒に整理します。<br>「AIで何が変わるか」「いくらかかるか」——全部、この30分で分かります。</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="#contact" class="btn btn-cta-orange">30分の無料相談で、貴社のAI活用プランが分かる</a>
+      <a href="#" class="btn btn-white-outline">3分でわかるサービス資料</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VAIZO -->
+<section class="section" id="why">
+  <div class="container">
+    <p class="section-label text-center">WHY VAIZO</p>
+    <h2 class="section-title text-center">「AIコンサル」はたくさんある。<br>VAIZOは何が違うのか。</h2>
+
+    <div style="max-width:800px; margin:48px auto 0;">
+      <div class="why-reason">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h3>経営を知っている人間が設計している。</h3>
+          <p>大手コンサルファームのAI導入は、技術者が設計しています。SANBO AIは、上場企業の経営戦略室で累計850億円・数百社の経営を見てきた人間が設計しています。「この業務をAI化すれば、経営にどう効くか」。技術ではなく、経営判断の文脈で設計します。</p>
+        </div>
+      </div>
+      <div class="why-reason">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h3>コンサルタント1人分の費用で、AI参謀チームがつく。</h3>
+          <p>大手コンサルファームに依頼すると、コンサルタント1人あたり月額100〜300万円。しかも専門領域ごとに別の担当がつくため、広報・採用・戦略をまとめて頼めば月額数百万円になります。SANBO AIなら、経営戦略から広報・採用まで全領域を月額10万円〜でカバー。まずは無料体験から始められます。</p>
+        </div>
+      </div>
+      <div class="why-reason">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h3>「社長がいないと回らない会社」を卒業する。</h3>
+          <p>社長が参謀AIと形成した経営方針・判断基準・優先順位を、部長陣も同じAIを通じて共有できます。複数のAI社員が同一のコンテキストで動くから、「社長の意図が伝わらない」がなくなる。全員が同じ前提で判断し、動ける組織に。あなたが3日休んでも、会社が回る状態を作ります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="section section-gray" id="flow">
+  <div class="container">
+    <p class="section-label text-center">FLOW</p>
+    <h2 class="section-title text-center">始め方は、シンプルです。</h2>
+    <p class="section-desc text-center">無料相談から運用開始まで、全てVAIZOがリードします。</p>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <h4>無料相談（30分）</h4>
+        <p>オンラインで貴社の業務を聞かせてください。「AIでどこが変わるか」「費用はいくらか」をその場でお伝えします。合わなければ、それで構いません。</p>
+      </div>
+      <div class="flow-step">
+        <h4>ご提案</h4>
+        <p>貴社の業務内容をもとに、最適なプランと導入ステップをご提案します。不明点がなくなるまで、何度でもご質問ください。</p>
+      </div>
+      <div class="flow-step">
+        <h4>導入・セットアップ</h4>
+        <p>契約後、VAIZOが環境構築からツール接続、操作研修まで全て行います。貴社側の技術的な準備は不要です。</p>
+      </div>
+      <div class="flow-step">
+        <h4>運用開始・伴走</h4>
+        <p>参謀AIが毎日の提案を開始。月次MTGで効果を確認しながら、一緒に改善を続けます。導入して終わりではありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <p class="section-label text-center">PRICING</p>
+    <h2 class="section-title text-center">料金プラン</h2>
+    <p class="section-desc text-center">全プラン初期費用0円。まずは無料で試して、効果を見てから広げられます。</p>
+
+    <!-- 無料体験 -->
+    <div style="max-width:640px; margin:0 auto 48px; padding:32px; border:2px solid #e67e22; border-radius:12px; text-align:center; background:#fdf8f3;">
+      <div style="font-size:13px; letter-spacing:0.1em; color:#e67e22; font-weight:700; margin-bottom:8px;">STEP 0</div>
+      <div style="font-size:24px; font-weight:900; margin-bottom:8px;">まずは無料で体験</div>
+      <p style="font-size:14px; color:#666; margin-bottom:16px;">登録不要でAI参謀を体験できます。気に入ったら、会社名の入力だけでさらに深くお試しいただけます。</p>
+      <a href="#contact" class="btn btn-cta-orange" style="margin-top:8px;">無料で試してみる</a>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">スターター</div>
+        <div class="pricing-price">5<span>万円/月</span></div>
+        <div class="pricing-unit">税別 ｜ 初期費用0円</div>
+        <ul class="pricing-features">
+          <li>社員何名でもログインOK</li>
+          <li>全員が同じ会社の文脈を共有してAIを利用</li>
+          <li>管理者ダッシュボード付き</li>
+          <li>定期フォローアップMTG</li>
+          <li>活用事例・実装手順コンテンツを定期配信</li>
+        </ul>
+        <div class="pricing-contract">最低契約期間なし ｜ いつでも解約可</div>
+        <a href="#contact" class="btn btn-outline-orange btn-full" style="margin-top:20px;">無料で相談してみる</a>
+      </div>
+      <div class="pricing-card pricing-card-pop" style="border-color:#e67e22;">
+        <div class="pricing-badge" style="background:#e67e22; color:#fff;">おすすめ</div>
+        <div class="pricing-name">スタンダード</div>
+        <div class="pricing-price">10<span>万円〜/月</span></div>
+        <div class="pricing-unit">税別 ｜ ご利用量に応じた柔軟な料金設計</div>
+        <ul class="pricing-features">
+          <li>スターターの全機能</li>
+          <li>ご利用量に応じて最適な料金に（上限あり・事前承認制）</li>
+          <li>毎月1件の業務AI化を提案＋実装</li>
+          <li>AI環境の導入・セットアップ・操作研修</li>
+          <li>業務ツール接続設定（Google Drive・Slack等）</li>
+        </ul>
+        <div class="pricing-contract" style="color:#888;">最低契約期間 3ヶ月</div>
+        <a href="#contact" class="btn btn-cta-orange btn-full" style="margin-top:20px;">無料で相談してみる</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">おまかせ</div>
+        <div class="pricing-price">50<span>万円/月</span></div>
+        <div class="pricing-unit">税別 ｜ AI利用は完全無制限</div>
+        <ul class="pricing-features">
+          <li>スタンダードの全機能</li>
+          <li>AIの利用は完全無制限</li>
+          <li>毎月2件の業務AI化を提案＋実装</li>
+          <li>月2回の経営戦略MTG</li>
+          <li>貴社専用AI環境の構築・管理・保守</li>
+          <li>セキュリティ・データ分離環境設計</li>
+          <li>導入費用込み</li>
+        </ul>
+        <div class="pricing-contract">最低契約期間 6ヶ月</div>
+        <a href="#contact" class="btn btn-outline-orange btn-full" style="margin-top:20px;">無料で相談してみる</a>
+      </div>
+    </div>
+
+    <!-- Price anchoring -->
+    <div style="max-width:640px; margin:48px auto 0; text-align:center;">
+      <p style="font-size:15px; color:#666; line-height:1.8;">AIエンジニアを1人採用すると、年間800〜1,100万円。<br>SANBO AI スタンダードなら、年間120万円〜。<strong style="color:#111;">エンジニア採用の1/6以下。</strong></p>
+    </div>
+
+    <p class="text-center" style="margin-top:32px; font-size:13px; color:#999;">
+      ※ 表示価格は目安です。貴社の規模・業種に応じてお見積もりします。
+    </p>
+
+    <!-- 5万円でここまでできる -->
+    <div style="max-width:880px; margin:64px auto 0; padding:48px 40px; background:#111; color:#fff; border-radius:12px;">
+      <p style="font-size:13px; letter-spacing:0.15em; color:#e67e22; text-align:center; margin-bottom:8px;">STARTER PLAN</p>
+      <h3 style="font-size:28px; font-weight:900; text-align:center; margin-bottom:8px;">月5万円で、ここまでできます。</h3>
+      <p style="font-size:14px; color:#999; text-align:center; margin-bottom:48px;">「安いけど何もできないんでしょ？」——いいえ。<br>月5万円のスタータープランに含まれる処理量を、具体的な数字でお見せします。</p>
+
+      <!-- インプット（読む・調べる・相談する） -->
+      <div style="margin-bottom:32px;">
+        <p style="font-size:11px; letter-spacing:0.15em; color:#e67e22; font-weight:700; margin-bottom:16px;">INPUT — 読む・調べる・相談する</p>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+          <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
+            <div style="font-size:42px; font-weight:900; color:#fff;">6,000<span style="font-size:16px; color:#888;">回</span></div>
+            <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">経営相談・壁打ち</div>
+            <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">毎日200回以上。「この方針で合ってる？」「競合はどう動いてる？」——何度でも。</p>
+          </div>
+          <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
+            <div style="font-size:42px; font-weight:900; color:#fff;">5,000<span style="font-size:16px; color:#888;">回</span></div>
+            <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">情報検索・市場調査</div>
+            <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">業界動向、競合分析、法改正の影響。知りたいことをその場で即回答。</p>
+          </div>
+          <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
+            <div style="font-size:42px; font-weight:900; color:#fff;">4,000<span style="font-size:16px; color:#888;">回</span></div>
+            <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">データ分析・要約</div>
+            <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">売上データの傾向分析、議事録の要点抽出、レポートの要約。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- アウトプット（作る・書く・生成する） -->
+      <div style="margin-bottom:32px;">
+        <p style="font-size:11px; letter-spacing:0.15em; color:#e67e22; font-weight:700; margin-bottom:16px;">OUTPUT — 作る・書く・生成する</p>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+          <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
+            <div style="font-size:42px; font-weight:900; color:#fff;">1,500<span style="font-size:16px; color:#888;">件</span></div>
+            <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">文書・資料の作成</div>
+            <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">提案書、報告書、メール文面、マニュアル。毎日50件以上の文書を生成可能。</p>
+          </div>
+          <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
+            <div style="font-size:42px; font-weight:900; color:#fff;">700<span style="font-size:16px; color:#888;">件</span></div>
+            <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">企画書・分析レポート</div>
+            <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">競合分析、事業計画、採用戦略。骨太な資料も月700件以上作成できます。</p>
+          </div>
+          <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
+            <div style="font-size:42px; font-weight:900; color:#fff;">100<span style="font-size:16px; color:#888;">人</span></div>
+            <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">ログイン人数の上限なし</div>
+            <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">追加料金なしで社員全員がアクセス。全員が同じ経営方針を共有してAIを利用。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 具体的な月間利用イメージ -->
+      <div style="padding:24px; background:#1a1a1a; border-radius:8px;">
+        <p style="font-size:14px; font-weight:700; margin-bottom:16px; color:#fff;">ある経営者の1ヶ月の利用例：</p>
+        <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:8px 24px;">
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">経営戦略の壁打ち — 毎日10回 × 22日 = 220回</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">競合分析レポート — 週1本 × 4週 = 4本</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">提案書・企画書 — 週3本 × 4週 = 12本</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">採用要件・求人文面 — 月10本</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">議事録の要約 — 毎日 × 22日 = 22件</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">営業メール・フォロー文面 — 毎日5通 = 110通</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">社内マニュアル整備 — 月5本</div>
+          <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">SNS投稿文 — 毎日2本 = 44本</div>
+        </div>
+        <p style="font-size:13px; color:#e67e22; margin-top:16px; font-weight:700; text-align:center;">これだけ使って、まだ余裕があります。</p>
+      </div>
+
+      <p style="font-size:13px; color:#666; text-align:center; margin-top:24px;">※ 上記はスタータープランの標準的な利用例です。ご利用量がさらに多い場合はスタンダードプランをご案内します。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISUAL BREAK 2 -->
+<div class="visual-break" style="background-image:url('images/ceo-strategy.jpg');">
+  <div class="visual-break-content">
+    <div class="stat-big">仕組みごと、変える。</div>
+    <div class="stat-label">人を増やしても解決しない問題を、AIで構造から変えます。</div>
+  </div>
+</div>
+
+<!-- CASE STUDY -->
+<section class="section section-dark" id="case">
+  <div class="container">
+    <p class="section-label text-center">CASE</p>
+    <h2 class="section-title text-center">人に勧める前に、<br>まず自分たちで成果を出す。</h2>
+    <p class="section-desc text-center">自分たちが使って成功していないものを、お客様に提供するわけにはいかない。<br>VAIZOでは創業初日からAIを全業務に投入し、自ら実証し続けています。</p>
+
+    <div class="card-grid card-grid-3">
+      <div class="card card-dark">
+        <div class="case-ba">
+          <span class="case-before">3〜5人</span>
+          <span class="case-arrow">→</span>
+          <span class="case-after">0.2人</span>
+        </div>
+        <h3>広報、全チャネルを実質0.2人で。</h3>
+        <p>note、X、LinkedIn、プレスリリース。全てAIが下書き、人間は最終チェックだけ。普通なら3〜5人必要な業務量を、実質0.2人工で回しています。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="case-ba">
+          <span class="case-before">3日</span>
+          <span class="case-arrow">→</span>
+          <span class="case-after">1時間</span>
+        </div>
+        <h3>事業計画書の作成が、3日→1時間に。</h3>
+        <p>事業計画書や予算書。以前は3日がかりだった作業が、参謀AIとの対話で1時間に。銀行提出レベルのクオリティで出力されます。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="case-ba">
+          <span class="case-before">ゼロから</span>
+          <span class="case-arrow">→</span>
+          <span class="case-after">1日</span>
+        </div>
+        <h3>公式Webサイトが、たった1日で完成。</h3>
+        <p>参謀AIに伝えたら、担当のAIが自動で立ち上がり、1日で公開レベルのサイトが完成。このLPも半日で出来ています。</p>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-3" style="margin-top:24px;">
+      <div class="card card-dark">
+        <div class="case-ba">
+          <span class="case-before">散在</span>
+          <span class="case-arrow">→</span>
+          <span class="case-after">一元化</span>
+        </div>
+        <h3>会議→要約→ナレッジベースに自動蓄積。</h3>
+        <p>会議は全て録音→文字起こし→参謀AIが構造化。決定事項・TODO・背景情報がナレッジベースに自動蓄積。散らばっていた業務知識が全社員アクセス可能に。「言った言わない」も「あの資料どこ」もなくなりました。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="case-ba">
+          <span class="case-before">一斉送信</span>
+          <span class="case-arrow">→</span>
+          <span class="case-after">1社1社</span>
+        </div>
+        <h3>リスト作成→リサーチ→個別営業メール。</h3>
+        <p>見込み顧客リストを自動生成し、各社の事業内容・課題・ニュースをAIがリサーチ。1社ごとにカスタマイズされた営業メールを作成。テンプレの一斉送信ではない、刺さる営業を実現しています。</p>
+      </div>
+      <div class="card card-dark">
+        <div class="case-ba">
+          <span class="case-before">外注数百万</span>
+          <span class="case-arrow">→</span>
+          <span class="case-after">自社で</span>
+        </div>
+        <h3>人事評価制度を、AIリサーチで自社設計。</h3>
+        <p>急成長企業や長期繁栄企業の評価制度をAIが徹底リサーチ。自社の事業フェーズ・カルチャー・成長方針と掛け合わせ、独自の評価制度を設計。通常は外部コンサルに数百万円かかる仕事を、参謀AIとの対話で実現しました。</p>
+      </div>
+    </div>
+
+    <p class="text-center" style="margin-top:40px; font-size:13px; color:#666;">※ これらはVAIZO自身の実績です。お客様の導入事例は、許可をいただき次第掲載します。</p>
+  </div>
+</section>
+
+<!-- CEO MESSAGE -->
+<section class="section" style="background:linear-gradient(135deg, #fafafa 60%, #f0f0f0 100%);">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <p class="section-label">MESSAGE</p>
+      <h2 class="section-title">「人が足りない」を、「人を増やす」で解いている限り、終わらない。</h2>
+
+      <div style="margin-top:40px; font-size:15px; color:#444; line-height:2.0;">
+        <p>上場企業の経営戦略室で、数百社の中小企業を見てきました。どの会社でも、同じ風景がありました。</p>
+        <p style="margin-top:20px;">社長が深夜2時に請求書と格闘している。採用に100万円かけて、来たのは1人。半年で辞めた。「人が足りない」をずっと言い続けている。</p>
+        <p style="margin-top:20px;">でも人を増やしても、仕組みが変わらなければ同じです。10人が12人になっても、社長の仕事は減らない。</p>
+        <p style="margin-top:20px;"><strong>AIなら、仕組みごと変えられる。</strong></p>
+        <p style="margin-top:20px;">部長が「10枚のスライド＝10時間」だった常識を捨てて、「30分で作れ」と言えるようになる。経理が辞めても、翌日から請求書が出る。社長が3日休んでも、会社が回る。</p>
+        <p style="margin-top:20px;">そういう会社を、一緒に作りませんか。まずは30分、あなたの話を聞かせてください。</p>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:16px; margin-top:40px; padding-top:32px; border-top:1px solid #eee;">
+        <div style="width:56px; height:56px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="images/hashimoto-yutaro.jpg" alt="橋本 友太郎" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div>
+          <div style="font-size:15px; font-weight:700;">橋本 友太郎</div>
+          <div style="font-size:13px; color:#999;">株式会社VAIZO 代表取締役CEO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray" id="faq">
+  <div class="container" style="max-width:720px;">
+    <p class="section-label text-center">FAQ</p>
+    <h2 class="section-title text-center">よくいただくご質問</h2>
+    <div style="margin-top:48px;">
+
+      <!-- ① まずはじめに浮かぶ疑問 -->
+      <div class="faq-item open">
+        <div class="faq-q">うちみたいな小さい会社でも意味ありますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">むしろ、社員10人以下の会社こそ効果を実感されます。少人数だからこそ、1つの業務が自動化されるだけで全員の働き方が変わります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">ITに詳しくない社員でも使えますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">お客様の8割は「パソコンは得意じゃない」とおっしゃる方です。専門知識は一切不要で、日本語で「こうしたい」と伝えるだけ。つまずいている社員を早期に発見してフォローする仕組みも備えています。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">AIツールを導入したけど使われなくなった経験があります。<span class="faq-toggle">+</span></div>
+        <div class="faq-a">まさにそれがSANBO AIが解決する問題です。誰がどこでつまずいているかを管理者が把握でき、定期MTGや活用事例の配信で定着を支援します。「使いこなせない」を前提に設計されたサービスです。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">どのプランから始めるべきですか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">まずは無料体験からお試しいただけます。その後、スタータープラン（月5万円）で本格導入。効果を実感したらスタンダードへ。合わなければ、いつでも解約可能です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">本当に効果がありますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">まずは無料で体験いただけます。効果が見込めないと判断した場合、正直にそうお伝えします。「売るだけ売って終わり」は、私たちのやり方ではありません。</div>
+      </div>
+
+      <!-- ② 他のツールと比べてどうなの？ -->
+      <div class="faq-item">
+        <div class="faq-q">ChatGPTを社員に配ればいいのでは？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">ChatGPTを10人に配ると、10個のバラバラな文脈が生まれます。SANBO AIは全社員が同じ会社の方針・戦略・判断基準を共有した状態でAIを利用できます。さらに複数のAI社員が同時に稼働し、AI同士も文脈を共有します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">高性能なAIを1人で契約すれば十分では？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">個人向けの高性能AIは「1人の優秀なアシスタント」です。SANBO AIは「会社全員が使える、複数の専門家チーム」。部長が聞いても課長が聞いても、同じ経営方針を踏まえた回答が返ります。組織としてのAI活用は、個人利用とは別の価値があります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Microsoft CopilotやNotion AIとの違いは？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">これらは「聞かれたら答える」受動型のツールです。SANBO AIは「今月御社はこれに取り組むべき」と自ら提案する能動型。社内の暗黙知や判断の背景まで理解した上でのアドバイスは、汎用ツールでは実現できません。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">AI社員って結局チャットボットと同じでは？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">3つの決定的な違いがあります。(1) 複数のAI社員が同時に稼働し、全員が同じ経営方針を共有している。(2) 社員全員が同じAI社員にアクセスでき、組織全体で活用できる。(3) テキストを返すだけでなく、仕組みを作り、業務を実行します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">自社でAI環境を構築すればコストを抑えられるのでは？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">技術に詳しいエンジニアがいれば可能です。ただし、AIエンジニアの採用には年間600〜800万円の人件費がかかります。SANBO AIのスタータープランは年間60万円。同一コンテクスト共有、複数AI社員、管理ダッシュボードの自社構築を考えると、大幅にコストを抑えられます。</div>
+      </div>
+
+      <!-- ③ 料金・契約について -->
+      <div class="faq-item">
+        <div class="faq-q">月5万円には具体的に何が含まれていますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">社員何名でも利用できるAI環境、全員が共有する経営コンテクストの設計・保守、複数AI社員の稼働基盤、管理者ダッシュボード、定期フォローアップMTG、活用事例の配信が含まれます。AI環境の構築・運用をすべて任せられるサービスです。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">スタンダードプランの料金はどう決まりますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">基本料金（月10万円）に、ご利用量に応じた料金が加算されます。月額の上限があり、料金が上がる際は必ず事前にご確認いただく仕組みです。知らないうちに高額になることはありません。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">途中で解約できますか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">スタータープランは最低契約期間なし。いつでもやめられます。違約金もありません。「続けたい」と思っていただけるサービスにする——それが私たちの責任です。</div>
+      </div>
+
+      <!-- ④ 長期的な視点 -->
+      <div class="faq-item">
+        <div class="faq-q">半年後にはChatGPTが同じことをできるようになりませんか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">SANBO AIの強みは、御社の経営方針や暗黙知を理解した上でのAI活用支援です。汎用AIがどれだけ進化しても「御社の文脈を知っているAI」にはなれません。また、社員の活用状況を可視化する機能は、大手AI企業がプライバシーの観点から提供しにくい領域です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">セキュリティは大丈夫ですか？<span class="faq-toggle">+</span></div>
+        <div class="faq-a">お客様のデータはVAIZOの専用サーバー上で管理します。おまかせプランではデータ分離環境を設計します。機密情報の取り扱いについては、秘密保持契約（NDA）を締結します。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA + FORM -->
+<section class="section" id="contact">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <h2 class="section-title">あなたの会社の「何が変わるか」、<br>30分で分かります。</h2>
+      <p class="section-desc">難しい準備は何もいりません。「今、一番困っていること」を教えてください。<br>AIでどうなるかを、専門用語なしでお伝えします。</p>
+    </div>
+
+    <form class="form-grid" action="#" method="POST">
+      <div class="form-group">
+        <label class="form-label">会社名 <span class="req">必須</span></label>
+        <input type="text" class="form-input" placeholder="株式会社○○" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">お名前 <span class="req">必須</span></label>
+        <input type="text" class="form-input" placeholder="橋本 太郎" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">メールアドレス <span class="req">必須</span></label>
+        <input type="email" class="form-input" placeholder="info@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">電話番号</label>
+        <input type="tel" class="form-input" placeholder="090-0000-0000">
+      </div>
+      <div class="form-group">
+        <label class="form-label">従業員数 <span class="req">必須</span></label>
+        <select class="form-select" required>
+          <option value="">選択してください</option>
+          <option>1〜10名</option>
+          <option>11〜30名</option>
+          <option>31〜50名</option>
+          <option>51〜100名</option>
+          <option>101名以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">関心のあるプラン <span class="req">必須</span></label>
+        <select class="form-select" required>
+          <option value="">選択してください</option>
+          <option>まだ分からない</option>
+          <option>スターター（月5万円）</option>
+          <option>スタンダード（月10万円〜）</option>
+          <option>おまかせ（月50万円）</option>
+        </select>
+      </div>
+      <div class="form-group" style="grid-column:1/-1;">
+        <label class="form-label">VAIZOを知ったきっかけ <span class="req">必須</span></label>
+        <select class="form-select" required>
+          <option value="">選択してください</option>
+          <option>LinkedIn</option>
+          <option>X（Twitter）</option>
+          <option>note</option>
+          <option>Google検索</option>
+          <option>知人・税理士等からの紹介</option>
+          <option>セミナー</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-group" style="grid-column:1/-1;">
+        <label class="form-label">ご質問・気になっていること</label>
+        <textarea class="form-textarea" placeholder="「うちの業務でもAIは使えるのか」「費用感を知りたい」など、何でもお気軽にどうぞ。"></textarea>
+      </div>
+      <div style="grid-column:1/-1; text-align:center; margin-top:16px;">
+        <button type="submit" class="btn btn-primary" style="min-width:320px; padding:18px 40px; font-size:16px;">無料で相談してみる</button>
+        <p style="font-size:13px; color:#999; margin-top:12px;">現在多くのお問い合わせをいただいており、ご返信までに2〜3営業日いただく場合がございます。<br>AI導入を本気でご検討中の経営者様を優先的にご案内しております。</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#111; color:#fff; padding:64px 0 32px;">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="font-size:20px; font-weight:900; letter-spacing:0.15em; margin-bottom:16px;">SANBO AI</div>
+        <p style="font-size:13px; color:#888; line-height:1.7;">中小企業に、産業革命を。<br>中小企業向けAI導入支援サービス。</p>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; color:#666; margin-bottom:16px;">サービス</div>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:10px;"><a href="#service" style="font-size:13px; color:#999;">サービス概要</a></li>
+          <li style="margin-bottom:10px;"><a href="#pricing" style="font-size:13px; color:#999;">料金プラン</a></li>
+          <li style="margin-bottom:10px;"><a href="#flow" style="font-size:13px; color:#999;">導入の流れ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; color:#666; margin-bottom:16px;">会社情報</div>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:10px;"><a href="https://vaizo.jp/about.html" style="font-size:13px; color:#999;">会社概要</a></li>
+          <li style="margin-bottom:10px;"><a href="https://vaizo.jp/news/" style="font-size:13px; color:#999;">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; color:#666; margin-bottom:16px;">サポート</div>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:10px;"><a href="#contact" style="font-size:13px; color:#999;">お問い合わせ</a></li>
+          <li style="margin-bottom:10px;"><a href="https://vaizo.jp/privacy.html" style="font-size:13px; color:#999;">プライバシーポリシー</a></li>
+          <li style="margin-bottom:10px;"><a href="https://vaizo.jp/legal.html" style="font-size:13px; color:#999;">特定商取引法表記</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 VAIZO Inc. All rights reserved.</span>
+      <span>info@vaizo.jp</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Header scroll effect ──
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// ── Mobile menu toggle ──
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.getElementById('nav').classList.toggle('open');
+});
+
+// ── Hero canvas animation (vaizo.jp style particle network) ──
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let w, h;
+  const PARTICLE_COUNT = 60;
+  const CONNECTION_DIST = 150;
+  let mouse = { x: null, y: null };
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+
+  function init() {
+    resize();
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: Math.random() * 2 + 1
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    // Draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECTION_DIST) {
+          const opacity = (1 - dist / CONNECTION_DIST) * 0.15;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+
+      // Mouse connection
+      if (mouse.x !== null) {
+        const dx = particles[i].x - mouse.x;
+        const dy = particles[i].y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 200) {
+          const opacity = (1 - dist / 200) * 0.25;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw & update particles
+    for (const p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.4)';
+      ctx.fill();
+
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+
+  window.addEventListener('resize', resize);
+  init();
+  draw();
+})();
+
+// ── Mobile sticky CTA ──
+const mobileCta = document.getElementById('mobileCta');
+const isMobile = window.innerWidth <= 768;
+if (isMobile && mobileCta) {
+  window.addEventListener('scroll', () => {
+    mobileCta.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+}
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+
+<div id="mobileCta" style="display:none; position:fixed; bottom:0; left:0; right:0; padding:12px 16px; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); border-top:1px solid #eee; z-index:999; text-align:center;">
+  <a href="#contact" style="display:block; background:#e67e22; color:#fff; padding:14px; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 4px 16px rgba(230,126,34,0.4);">無料で相談してみる</a>
+</div>
+
+</body>
+</html>

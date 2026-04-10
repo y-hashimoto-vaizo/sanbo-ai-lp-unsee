@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+
+<title>ページが見つかりません - フリー素材ぱくたそ</title>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://user0514.cdnw.net" crossorigin>
+
+<link rel="stylesheet" href="https://user0514.cdnw.net/shared/css/font-awesome.css">
+<link rel="stylesheet" href="/dist/css/main.css">
+<link rel="stylesheet" href="/shared/css/csapp110.css">
+<link rel="stylesheet" href="/inc/clheader.css">
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+if (!document.getElementById('topSearch')) {
+  var d = document.createElement('input');
+  d.id = 'topSearch';
+  d.type = 'hidden';
+  d.style.display = 'none';
+  d.setAttribute('aria-hidden', 'true');
+  d.setAttribute('tabindex', '-1');
+  document.documentElement.appendChild(d);
+}
+</script>
+<script defer type="module" src="/dist/js/main.js"></script>
+<script defer src="/inc/searchspace.js"></script>
+<script defer src="/inc/clheader.js"></script>
+
+
+<style>
+/* === 404ページ固有スタイル === */
+.notFound {
+  text-align: center;
+  padding: 20px 20px 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.notFound__image {
+  max-width: 1240px;
+  margin: 0 auto 10px;
+}
+.notFound__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.notFound__caption {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 30px;
+}
+.notFound__caption a {
+  color: #888;
+  text-decoration: underline;
+}
+
+/* --- 404 バウンスアニメーション --- */
+.notFound__code {
+  font-size: 7rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  margin-bottom: 5px;
+  line-height: 1;
+}
+.notFound__code span {
+  display: inline-block;
+  color: #fe7657;
+  text-shadow: 0 4px 12px rgba(254, 118, 87, 0.3);
+  animation: bounce404 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             float404 2.5s ease-in-out 1.5s infinite;
+  opacity: 0;
+}
+.notFound__code span:nth-child(1) {
+  animation-delay: 0.1s, 1.5s;
+}
+.notFound__code span:nth-child(2) {
+  animation-delay: 0.35s, 1.75s;
+}
+.notFound__code span:nth-child(3) {
+  animation-delay: 0.6s, 2.0s;
+}
+
+@keyframes bounce404 {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.7) rotate(-5deg);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(8px) scaleY(0.9) scaleX(1.1) rotate(0deg);
+  }
+  55% {
+    transform: translateY(-20px) scaleY(1.1) scaleX(0.95) rotate(2deg);
+  }
+  70% {
+    transform: translateY(4px) scaleY(0.95) scaleX(1.03) rotate(-1deg);
+  }
+  85% {
+    transform: translateY(-6px) scale(1.01) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+@keyframes float404 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1.5deg); }
+  75% { transform: translateY(4px) rotate(-1deg); }
+}
+
+.notFound__title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+.notFound__message {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+.notFound__search {
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+@media screen and (max-width: 768px) {
+  .notFound { padding: 40px 0 0; }
+  .notFound__code { font-size: 5rem; }
+  .notFound__title { font-size: 2rem; }
+  .notFound__message { font-size: 1.3rem; padding: 0 15px; }
+  .notFound__search { padding: 0 15px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="l-container">
+
+<header class="l-header l-header-cl">
+<div class="l-header-cl__inner">
+
+  <!-- ロゴ -->
+  <div class="logo">
+    <a href="/"><img src="https://user0514.cdnw.net/shared/img/site/logo.svg" width="150" height="31" alt="写真素材・AI画像素材ならフリー素材ぱくたそ公式サイト"></a>
+  </div>
+
+  <!-- SP用ハンバーガー（PCでは非表示 / 次フェーズでJS実装） -->
+  <div class="is-sp-hamburger">
+    <button type="button" class="menuButton" id="js-menu-sp" data-menu-id="sideMenu"><span>MENU</span></button>
+  </div>
+
+  <!-- グローバルナビ（-nav のみ） -->
+  <nav id="js-globalNav" class="globalNav">
+  <ul id="menu" class="globalNav__list -nav">
+
+    <!-- ① カテゴリ▼ （メガメニュー：PC 2列サイドバー風 / SP 縦リスト） -->
+    <li class="globalNav__item -has-mega">
+      <a class="globalNav__link is-pc" href="/category.html" aria-haspopup="true" data-sub-list="globalNavCategory">カテゴリ<i class="arrow -down" aria-hidden="true"></i></a>
+      <button class="globalNav__link is-sp" data-sub-list="globalNavCategory">カテゴリ<i class="arrow -down" aria-hidden="true"></i></button>
+
+      <!-- PC専用メガメニュー（CSS-only hover / Ver.3.12） -->
+      <div class="megaMenu">
+        <ul class="megaMenu__grid">
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/human_thumb.jpg" alt="人物のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/person/">人物</a>
+                <span class="megaMenu__sub"><a href="/person/man/">男性</a> / <a href="/person/woman/">女性</a> / <a href="/person/child/">子供</a> / <a href="/person/baby/">赤ちゃん</a> / <a href="/person/throng/">人混み</a> / <a href="https://www.pakutaso.com/model.html" class="megaMenu__model-link">モデル一覧</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_animal.jpg" alt="動物・生物のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/animal/">動物・生物</a>
+                <span class="megaMenu__sub"><a href="/animal/cat/">猫</a> / <a href="/animal/dog/">犬</a> / <a href="/animal/bird/">鳥</a> / <a href="/animal/insect/">昆虫</a> / <a href="/animal/wild/">野生動物</a> / <a href="/animal/fish/">魚</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_nature.jpg" alt="自然・風景のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/nature/">自然・風景</a>
+                <span class="megaMenu__sub"><a href="/nature/flower/">花</a> / <a href="/nature/plant/">植物</a> / <a href="/nature/tree/">木・森</a> / <a href="/nature/mountain/">山</a> / <a href="/nature/sea/">海・砂浜</a> / <a href="/nature/river/">川・池</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_sky.jpg" alt="天気・天候のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/weather/">天気・天候</a>
+                <span class="megaMenu__sub"><a href="/weather/sky/">空・雲</a> / <a href="/weather/rain/">雨</a> / <a href="/weather/star/">星</a> / <a href="/weather/snow/">雪</a> / <a href="/weather/rain/typhoon/">台風</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_town.jpg" alt="街並みのカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/town/">街並み</a>
+                <span class="megaMenu__sub"><a href="/town/office/">都市景観</a> / <a href="/town/shopping/">商店街</a> / <a href="/town/scenery/">住宅街</a> / <a href="/town/rural/">田園風景</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_chihousousei.jpg" alt="施設・観光のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/facility/">施設・観光</a>
+                <span class="megaMenu__sub"><a href="/facility/washitsu/">和室</a> / <a href="/facility/spa/">温泉</a> / <a href="/facility/spot/">建造物</a> / <a href="/facility/ruins/">廃墟</a> / <a href="/facility/shrine/">寺・神社</a> / <a href="/facility/terminal/">駅</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_food.jpg" alt="飲食のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/food/">飲食</a>
+                <span class="megaMenu__sub"><a href="/food/eat/">料理・食べ物</a> / <a href="/food/drink/">飲み物</a> / <a href="/food/ingredient/">食材</a> / <a href="/food/dessert/">デザート</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_object.jpg" alt="日常・生活のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/object/">日常・生活</a>
+                <span class="megaMenu__sub"><a href="/object/money/">お金</a> / <a href="/object/goods/">小物・雑貨</a> / <a href="/object/note/">文房具</a> / <a href="/object/hobby/">ホビー</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_electronics.jpg" alt="電化製品のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/electronics/">電化製品</a>
+                <span class="megaMenu__sub"><a href="/electronics/pc/">パソコン・周辺機器</a> / <a href="/electronics/mobile/">モバイル製品</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_mono.jpg" alt="工業・ものづくりのカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/mono/">工業・ものづくり</a>
+                <span class="megaMenu__sub"><a href="/mono/factory/">工事・工場</a> / <a href="/mono/construction/">工事・建設</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_traffic.jpg" alt="乗り物・交通のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/traffic/">乗り物・交通</a>
+                <span class="megaMenu__sub"><a href="/traffic/car/">自動車</a> / <a href="/traffic/bike/">バイク</a> / <a href="/traffic/train/">電車</a> / <a href="/traffic/ship/">船舶</a> / <a href="/traffic/airplane/">飛行機</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_texture.jpg" alt="テクスチャーのカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/texture/">テクスチャー</a>
+                <span class="megaMenu__sub"><a href="/texture/bricks/">レンガ</a> / <a href="/texture/concrete/">コンクリート</a> / <a href="/texture/metal/">金属</a> / <a href="/texture/woodgrain/">木目</a> / <a href="/texture/paper/">紙・和紙</a> / <a href="/texture/cloth/">布</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/category-effect1.jpg" alt="エフェクトのカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/effect/">エフェクト</a>
+                <span class="megaMenu__sub"><a href="/effect/lightleak/">ライトリーク</a> / <a href="/effect/fire/">炎</a> / <a href="/effect/smoke/">スモーク</a> / <a href="/effect/bubble/">水流</a> / <a href="/effect/lightning/">稲妻</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_seasons.jpg" alt="年中行事のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/seasons/">年中行事</a>
+                <span class="megaMenu__sub"><a href="/seasons/newyear/">正月</a> / <a href="/seasons/setsubun/">節分</a> / <a href="/seasons/valentine/">バレンタイン</a> / <a href="/seasons/fireworks/">花火</a> / <a href="/seasons/helloween/">ハロウィン</a> / <a href="/seasons/christmas/">クリスマス</a></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="megaMenu__item">
+            <div class="megaMenu__cell">
+              <div class="megaMenu__thumb"><img decoding="async" width="54" height="54" src="https://user0514.cdnw.net/shared/img/category/img_photomontage.jpg" alt="作品のカテゴリ"></div>
+              <div class="megaMenu__text">
+                <a class="megaMenu__label" href="/topics/">作品</a>
+                <span class="megaMenu__sub"><a href="/topics/crystal/">水晶玉</a> / <a href="/topics/photomontage/">フォトモンタージュ</a></span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+        <div class="megaMenu__footer">
+          <a href="/news.html">新着フリー素材 →</a>
+          <a href="/category.html">カテゴリをすべて見る →</a>
+        </div>
+      </div><!-- /.megaMenu -->
+
+      <!-- SP専用縦リスト（既存構造を維持） -->
+      <ul id="globalNavCategory" class="globalNav__subList">
+        <li class="globalNav__subItem"><a href="/person/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/human_thumb.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/human_thumb.jpg?w=100,h=auto" alt="人物"></picture></div><div>人物</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/animal/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_animal.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_animal.jpg?w=100,h=auto" alt="動物・生物"></picture></div><div>動物・生物</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/nature/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_nature.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_nature.jpg?w=100,h=auto" alt="自然・風景"></picture></div><div>自然・風景</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/weather/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_sky.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_sky.jpg?w=100,h=auto" alt="天気・天候"></picture></div><div>天気・天候</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/town/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_town.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_town.jpg?w=100,h=auto" alt="街並み"></picture></div><div>街並み</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/facility/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_chihousousei.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_chihousousei.jpg?w=100,h=auto" alt="施設・観光"></picture></div><div>施設・観光</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/food/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_food.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_food.jpg?w=100,h=auto" alt="飲食"></picture></div><div>飲食</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/object/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_object.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_object.jpg?w=100,h=auto" alt="日常・生活"></picture></div><div>日常・生活</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/electronics/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_electronics.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_electronics.jpg?w=100,h=auto" alt="電化製品"></picture></div><div>電化製品</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/mono/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_mono.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_mono.jpg?w=100,h=auto" alt="工業・ものづくり"></picture></div><div>工業・ものづくり</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/traffic/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_traffic.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_traffic.jpg?w=100,h=auto" alt="乗り物・交通"></picture></div><div>乗り物・交通</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/texture/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_texture.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_texture.jpg?w=100,h=auto" alt="テクスチャー"></picture></div><div>テクスチャー</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/effect/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/category-effect1.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/category-effect1.jpg?w=100,h=auto" alt="エフェクト"></picture></div><div>エフェクト</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/seasons/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_seasons.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_seasons.jpg?w=100,h=auto" alt="年中行事"></picture></div><div>年中行事</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/topics/" style="padding-top:5px;padding-bottom:5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:5px"><picture><source srcset="https://user0514.cdnw.net/shared/img/category/img_photomontage.jpg?w=100,h=auto" type="image/webp"><img decoding="async" width="40" height="40" src="https://user0514.cdnw.net/shared/img/category/img_photomontage.jpg?w=100,h=auto" alt="作品"></picture></div><div>作品</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem is-sp"><a href="/category.html">すべて見る<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+      </ul>
+    </li>
+
+    <!-- ② AI素材（メガメニュー） -->
+    <li class="globalNav__item -has-mega">
+      <a class="globalNav__link is-pc" href="https://www.pakutaso.com/ai/" aria-haspopup="true">AI素材<i class="arrow -down" aria-hidden="true"></i></a>
+      <button class="globalNav__link is-sp" data-sub-list="globalNavAi">AI素材<i class="arrow -down" aria-hidden="true"></i></button>
+
+      <!-- AI素材メガメニュー（PC専用・CSS-only hover） -->
+      <div class="megaMenu -ai">
+
+        <!-- 5列×4行 サムネイルのみ（PC20件／タブレット4列16件） -->
+        <ul class="megaMenu__ai-grid">
+          <li><a href="/ai/forest.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-forest.jpg" alt="森林"></a></li>
+          <li><a href="/ai/bluesky.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-bluesky.jpg" alt="青空"></a></li>
+          <li><a href="/ai/flower.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-flower.jpg" alt="花"></a></li>
+          <li><a href="/ai/sunset.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-sunset.jpg" alt="夕焼け"></a></li>
+          <li><a href="/search.html?search=水彩&limit=30&type=ai"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-suisai.jpg" alt="水彩"></a></li>
+          <li><a href="/ai/townscape.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-cityscape.jpg" alt="街並み"></a></li>
+          <li><a href="/ai/office.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-office.jpg" alt="オフィス"></a></li>
+          <li><a href="/ai/mountain.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-mt.jpg" alt="山"></a></li>
+          <li><a href="/ai/cyberspace.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-cyber2.jpg" alt="サイバーパンク"></a></li>
+          <li><a href="/ai/ruins.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-ruins.jpg" alt="廃墟"></a></li>
+          <li><a href="/ai/flame.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-fire.jpg" alt="炎"></a></li>
+          <li><a href="/ai/lightleak.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-lightleak.jpg" alt="ライトリーク"></a></li>
+          <li><a href="/ai/light-trail.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-vestigelight.jpg" alt="光跡"></a></li>
+          <li><a href="/ai/hotel.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-hotel.jpg" alt="ホテル"></a></li>
+          <li><a href="/ai/laboratory.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-kagaku.jpg" alt="実験室"></a></li>
+          <li><a href="/ai/cave.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-cave.jpg" alt="洞窟"></a></li>
+          <li><a href="/ai/fabric.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-kiji.jpg" alt="生地"></a></li>
+          <li><a href="/ai/living.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-living.jpg" alt="リビング"></a></li>
+          <li><a href="/ai/partyroom.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-party.jpg" alt="パーティー"></a></li>
+          <li><a href="/ai/papertexture.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-papertexture.jpg" alt="紙テクスチャ"></a></li>
+        </ul>
+
+        <div class="megaMenu__ai-footer">
+          <a href="https://www.pakutaso.com/ai/aisozai.html">AI素材一覧を見る →</a>
+        </div>
+      </div><!-- /.megaMenu.-ai -->
+
+      <!-- SP用縦リスト（AI素材） -->
+      <ul id="globalNavAi" class="globalNav__subList">
+        <li class="globalNav__subItem is-sp"><a href="https://www.pakutaso.com/ai/aisozai.html">AI素材一覧<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/ai/forest.html">森林<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/ai/office.html">オフィス<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/ai/townscape.html">街並み<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/ai/cyberspace.html">サイバーパンク<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+      </ul>
+
+    </li>
+
+    <!-- ③ タグ▼ メガメニュー（PC: 2列グリッド・丸アイコン＋カテゴリ名） -->
+    <li class="globalNav__item -has-mega">
+      <a class="globalNav__link is-pc" href="/tag/" aria-haspopup="true">タグ<i class="arrow -down" aria-hidden="true"></i></a>
+      <button class="globalNav__link is-sp" data-sub-list="globalNavTag">タグ<i class="arrow -down" aria-hidden="true"></i></button>
+
+      <!-- タグメガメニュー（PC専用） -->
+      <div class="megaMenu -tag">
+        <ul class="megaMenu__tag-grid">
+          <li><a href="/tag/business/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-business.jpg" alt="ビジネス・仕事のタグ">ビジネス・仕事</a></li>
+          <li><a href="/tag/lifestyle/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-lifestyle.jpg" alt="日常・生活シーンのタグ">日常・生活シーン</a></li>
+          <li><a href="/tag/expression/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-expression.jpg" alt="表情・ポーズ・感情のタグ">表情・ポーズ・感情</a></li>
+          <li><a href="/tag/seasonal/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-seasonal.jpg" alt="季節・行事のタグ">季節・行事</a></li>
+          <li><a href="/tag/style/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-style.jpg" alt="色・光・質感・テイストのタグ">色・光・質感・テイスト</a></li>
+          <li><a href="/tag/location/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-location.jpg" alt="地域・観光地・名所のタグ">地域・観光地・名所</a></li>
+          <li><a href="/tag/occupation/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-occupation.jpg" alt="職業・人物属性のタグ">職業・人物属性</a></li>
+          <li><a href="/tag/health/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-health.jpg" alt="健康・美容・スポーツのタグ">健康・美容・スポーツ</a></li>
+          <li><a href="/tag/landscape/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-landscape.jpg" alt="自然・風景・動物のタグ">自然・風景・動物</a></li>
+          <li><a href="/tag/place/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-place.jpg" alt="建物・施設・場所のタグ">建物・施設・場所</a></li>
+          <li><a href="/tag/gourmet/"><img decoding="async" width="48" height="48" src="https://user0514.cdnw.net/tag/tag-gourmet.jpg" alt="食べ物・飲み物のタグ">食べ物・飲み物</a></li>
+        </ul>
+        <div class="megaMenu__tag-footer">
+          <a href="/tag/">タグ一覧をすべて見る →</a>
+        </div>
+      </div><!-- /.megaMenu.-tag -->
+
+      <!-- SP用縦リスト（既存維持） -->
+      <ul id="globalNavTag" class="globalNav__subList">
+        <li class="globalNav__subItem is-sp"><a href="/tag/">タグ一覧<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/tag/business/">ビジネス<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/tag/lifestyle/">日常・生活<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/tag/seasonal/">季節・行事<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/tag/landscape/">自然・風景<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/tag/gourmet/">食べ物<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+      </ul>
+    </li>
+
+    <!-- ④ 人気▼ メガメニュー（PC: 1列・横長サムネイル） -->
+    <li class="globalNav__item -has-mega">
+      <a class="globalNav__link is-pc" href="/selection/" aria-haspopup="true">人気<i class="arrow -down" aria-hidden="true"></i></a>
+      <button class="globalNav__link is-sp" data-sub-list="globalNavRanking">人気<i class="arrow -down" aria-hidden="true"></i></button>
+
+      <!-- 人気メガメニュー（PC専用） -->
+      <div class="megaMenu -popular">
+        <ul class="megaMenu__popular-list">
+          <li><a href="/selection/star-selection.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/star-selection.jpg?w=200,h=auto" alt="星空セレクション"><span>星空セレクション</span></a></li>
+          <li><a href="/selection/springselection.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/sakuraharu.jpg?w=200,h=auto" alt="春の写真まとめ"><span>春の写真まとめ</span></a></li>
+          <li><a href="/selection/summermatome.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/summerselction.jpg?w=200,h=auto" alt="夏の写真まとめ"><span>夏の写真まとめ</span></a></li>
+          <li><a href="/selection/autumnselect.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/automn1500top.jpg?w=200,h=auto" alt="秋の写真まとめ"><span>秋の写真まとめ</span></a></li>
+          <li><a href="/selection/winterselction.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/winter_1500900.jpg?w=200,h=auto" alt="冬の写真まとめ"><span>冬の写真まとめ</span></a></li>
+          <li><a href="/selection/overseasselection.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/kaigai1500900.jpg?w=200,h=auto" alt="海外の写真まとめ"><span>海外の写真まとめ</span></a></li>
+        </ul>
+        <div class="megaMenu__popular-footer">
+          <a href="/selection/">人気をすべて見る →</a>
+        </div>
+      </div><!-- /.megaMenu.-popular -->
+
+      <!-- SP用縦リスト（既存維持） -->
+      <ul id="globalNavRanking" class="globalNav__subList">
+        <li class="globalNav__subItem is-sp"><a href="/selection/">人気のジャンル<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/selection/ranking/">ランキング<i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+      </ul>
+    </li>
+
+    <!-- ⑤ 企画▼ -->
+    <li class="globalNav__item">
+      <a class="globalNav__link is-pc" href="/event.html" aria-haspopup="true" data-sub-list="globalNavKikaku">企画<i class="arrow -down" aria-hidden="true"></i></a>
+      <button class="globalNav__link is-sp" data-sub-list="globalNavKikaku">企画<i class="arrow -down" aria-hidden="true"></i></button>
+      <ul id="globalNavKikaku" class="globalNav__subList">
+        <li class="globalNav__subItem"><a href="/sousei/" style="padding-top: 5px;padding-bottom: 5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:8px"><picture>
+<source srcset="https://user0514.cdnw.net/shared/img/page/img_sousei_thumb.jpg?w=120,h=auto" type="image/webp">
+<img decoding="async" width="60" height="60" src="https://user0514.cdnw.net/shared/img/page/img_sousei_thumb.jpg?w=120,h=auto" alt="自治体コラボ">
+</picture></div><div>自治体コラボ</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/collabo/" style="padding-top: 5px;padding-bottom: 5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:8px"><picture>
+<source srcset="https://user0514.cdnw.net/shared/img/page/img_collabo_thumb.jpg?w=120,h=auto" type="image/webp">
+<img decoding="async" width="60" height="60" src="https://user0514.cdnw.net/shared/img/page/img_collabo_thumb.jpg?w=120,h=auto" alt="企業コラボ">
+</picture></div><div>企業コラボ</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+        <li class="globalNav__subItem"><a href="/project/" style="padding-top: 5px;padding-bottom: 5px;"><figure class="sidebarNav__thumb"><div class="sidebarNav__image" style="margin-right:8px"><picture>
+<source srcset="https://user0514.cdnw.net/shared/img/page/img_project_thumb.jpg?w=120,h=auto" type="image/webp">
+<img decoding="async" width="60" height="60" src="https://user0514.cdnw.net/shared/img/page/img_project_thumb.jpg?w=120,h=auto" alt="自主企画">
+</picture></div><div>自主企画</div></figure><i class="arrow -right is-sp" aria-hidden="true"></i></a></li>
+      </ul>
+    </li>
+
+  </ul>
+  </nav>
+
+  <!-- 検索バー -->
+  <div class="search">
+  <form class="search__form" action="/search.html" method="GET">
+    <input type="hidden" name="offset" value="0">
+    <input type="hidden" name="limit" value="30">
+    <div class="search__field">
+      <button class="search__submit" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      <input class="search__input" type="search" id="headerSearch" name="search" placeholder="キーワードで探す">
+      <button class="search__more" type="button">絞り込み<i class="triangle -bottom" aria-hidden="true"></i></button>
+    </div>
+    <div class="searchFilters">
+      <div class="searchFilters__heading">各項目で絞り込む</div>
+      <dl class="searchFilters__block">
+        <dt class="searchFilters__title">カラー</dt>
+        <dd class="searchFilters__description">
+          <div class="searchColors">
+            <ul class="searchColors__list">
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-clear">
+                  <input class="searchColors__radio" type="radio" id="color-clear" name="imagecolor" value="" checked=""><span class="searchColors__name searchColors__clear">なし</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-red">
+                  <input class="searchColors__radio" type="radio" id="color-red" name="imagecolor" value="red"><span class="searchColors__name searchColors__red">赤色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-orange">
+                  <input class="searchColors__radio" type="radio" id="color-orange" name="imagecolor" value="orange"><span class="searchColors__name searchColors__orange">橙色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-yellow">
+                  <input class="searchColors__radio" type="radio" id="color-yellow" name="imagecolor" value="yellow"><span class="searchColors__name searchColors__yellow">黄色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-green">
+                  <input class="searchColors__radio" type="radio" id="color-green" name="imagecolor" value="green"><span class="searchColors__name searchColors__green">緑色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-sky">
+                  <input class="searchColors__radio" type="radio" id="color-sky" name="imagecolor" value="sky"><span class="searchColors__name searchColors__skyblue">水色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-blue">
+                  <input class="searchColors__radio" type="radio" id="color-blue" name="imagecolor" value="blue"><span class="searchColors__name searchColors__blue">青色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-purple">
+                  <input class="searchColors__radio" type="radio" id="color-purple" name="imagecolor" value="purple"><span class="searchColors__name searchColors__purple">紫色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-pink">
+                  <input class="searchColors__radio" type="radio" id="color-pink" name="imagecolor" value="pink"><span class="searchColors__name searchColors__pink">桃色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-white">
+                  <input class="searchColors__radio" type="radio" id="color-white" name="imagecolor" value="white"><span class="searchColors__name searchColors__white">白色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-gray">
+                  <input class="searchColors__radio" type="radio" id="color-gray" name="imagecolor" value="gray"><span class="searchColors__name searchColors__gray">灰色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-black">
+                  <input class="searchColors__radio" type="radio" id="color-black" name="imagecolor" value="black"><span class="searchColors__name searchColors__black">黒色</span>
+                </label>
+              </li>
+              <li class="searchColors__item">
+                <label class="searchColors__label" for="color-brown">
+                  <input class="searchColors__radio" type="radio" id="color-brown" name="imagecolor" value="brown"><span class="searchColors__name searchColors__brown">茶色</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="searchFilters__block">
+        <dt class="searchFilters__title">向き</dt>
+        <dd class="searchFilters__description">
+          <ul class="searchFilters__list">
+            <li class="searchFilters__item -orientation">
+              <label class="searchFilters__label" for="orientations-horizontal">
+                <input class="searchFilters__checkbox" type="checkbox" id="orientations-horizontal" name="imagemuki" value="yoko"><i class="icon -checkbox" aria-hidden="true"></i><span class="searchFilters__name">横長</span>
+              </label>
+            </li>
+            <li class="searchFilters__item -orientation">
+              <label class="searchFilters__label" for="orientations-vertical">
+                <input class="searchFilters__checkbox" type="checkbox" id="orientations-vertical" name="imagemuki" value="tate"><i class="icon -checkbox" aria-hidden="true"></i><span class="searchFilters__name">縦長</span>
+              </label>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+
+      <dl class="searchFilters__block">
+        <dt class="searchFilters__title">種類</dt>
+        <dd class="searchFilters__description">
+          <ul class="searchFilters__list">
+            <li class="searchFilters__item -orientation">
+              <label class="searchFilters__label" for="all-image">
+                <input class="searchFilters__radio" type="radio" id="all-image" name="type" value="" checked=""><i class="icon -radio" aria-hidden="true"></i><span class="searchFilters__name">全て</span>
+              </label>
+            </li>
+            <li class="searchFilters__item -orientation">
+              <label class="searchFilters__label" for="type-photo">
+                <input class="searchFilters__radio" type="radio" id="type-photo" name="type" value="photo"><i class="icon -radio" aria-hidden="true"></i><span class="searchFilters__name">写真</span>
+              </label>
+            </li>
+            <li class="searchFilters__item -orientation">
+              <label class="searchFilters__label" for="type-ai">
+                <input class="searchFilters__radio" type="radio" id="type-ai" name="type" value="ai"><i class="icon -radio" aria-hidden="true"></i><span class="searchFilters__name">AI</span>
+              </label>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+
+      <p class="searchFilters__submit">
+        <button class="button -primary -search" type="submit"><i class="fa fa-search" aria-hidden="true"></i>検索する</button>
+      </p>
+      <p class="searchFilters__clear">
+        <button type="reset">クリア</button>
+      </p>
+    </div>
+  </form>
+  </div>
+
+  <!-- ボタン群（ガチャ・ファボ・規約・MENU）: 検索の右に独立配置 -->
+  <ul class="globalNav__list -button l-header-cl__buttons">
+
+    <li class="globalNav__item -gacha">
+      <a class="globalNav__link -icon" href="#" data-id="0" id="js-urlRandom" data-category="ガチャ" data-label="ガチャボタン" data-sub-list="globalgacha">
+        <div class="gachapy"><i class="fa fa-refresh globalNav__icon" aria-hidden="true"></i>ガチャ</div></a>
+    </li>
+
+    <li class="globalNav__item -favorite">
+      <a class="globalNav__link -icon" href="/favorite.html" aria-label="お気に入り一覧リンク">
+        <i class="fa fa-heart-o globalNav__icon" aria-hidden="true"></i>ファボ
+      </a>
+    </li>
+
+    <li class="globalNav__item -policy">
+      <a class="globalNav__link -icon" href="/userpolicy.html" aria-label="利用規約">
+        <i class="fa fa-file-text-o globalNav__icon" aria-hidden="true"></i>規約
+      </a>
+    </li>
+
+    <li class="globalNav__item -menu">
+      <button type="button" class="menuButton" id="js-menu" data-menu-id="sideMenu"><span>MENU</span></button>
+    </li>
+
+  </ul>
+
+</div><!-- /.l-header-cl__inner -->
+
+<!-- ============================================================
+     SP ドロワーメニュー（V3.44新規）
+     PC・タブレットでは CSS で非表示
+     ============================================================ -->
+<div id="spDrawer" class="sp-drawer" aria-hidden="true">
+  <nav class="sp-drawer__nav" aria-label="スマートフォン用メニュー">
+    <ul class="sp-drawer__list">
+
+      <!-- ① カテゴリ -->
+      <li class="sp-drawer__item">
+        <div class="sp-drawer__row">
+          <a class="sp-drawer__row-link" href="/category.html">カテゴリ</a>
+          <button class="sp-drawer__toggle" aria-expanded="false" aria-controls="spSubCategory"><span class="sp-drawer__arrow" aria-hidden="true"></span></button>
+        </div>
+        <ul id="spSubCategory" class="sp-drawer__sub -grid2">
+          <li><a class="sp-drawer__thumb-row" href="/person/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/human_thumb.jpg" alt="人物"><span>人物</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/animal/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_animal.jpg" alt="動物・生物"><span>動物・生物</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/nature/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_nature.jpg" alt="自然・風景"><span>自然・風景</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/weather/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_sky.jpg" alt="天気・天候"><span>天気・天候</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/town/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_town.jpg" alt="街並み"><span>街並み</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/facility/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_chihousousei.jpg" alt="施設・観光"><span>施設・観光</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/food/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_food.jpg" alt="飲食"><span>飲食</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/object/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_object.jpg" alt="日常・生活"><span>日常・生活</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/electronics/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_electronics.jpg" alt="電化製品"><span>電化製品</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/mono/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_mono.jpg" alt="工業・ものづくり"><span>工業・ものづくり</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/traffic/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_traffic.jpg" alt="乗り物・交通"><span>乗り物・交通</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/texture/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_texture.jpg" alt="テクスチャー"><span>テクスチャー</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/effect/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/category-effect1.jpg" alt="エフェクト"><span>エフェクト</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/seasons/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_seasons.jpg" alt="年中行事"><span>年中行事</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/topics/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/category/img_topics.jpg" alt="作品"><span>作品</span></a></li>
+        </ul>
+      </li>
+
+      <!-- ② AI素材（4カラム×5行グリッド） -->
+      <li class="sp-drawer__item">
+        <div class="sp-drawer__row">
+          <a class="sp-drawer__row-link" href="/ai/">AI素材</a>
+          <button class="sp-drawer__toggle" aria-expanded="false" aria-controls="spSubAi"><span class="sp-drawer__arrow" aria-hidden="true"></span></button>
+        </div>
+        <ul id="spSubAi" class="sp-drawer__ai-grid">
+          <li><a href="/ai/forest.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-forest.jpg" alt="森林"></a></li>
+          <li><a href="/ai/bluesky.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-bluesky.jpg" alt="青空"></a></li>
+          <li><a href="/ai/flower.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-flower.jpg" alt="花"></a></li>
+          <li><a href="/ai/sunset.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-sunset.jpg" alt="夕焼け"></a></li>
+          <li><a href="/search.html?search=水彩&limit=30&type=ai"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-suisai.jpg" alt="水彩"></a></li>
+          <li><a href="/ai/townscape.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-cityscape.jpg" alt="街並み"></a></li>
+          <li><a href="/ai/office.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-office.jpg" alt="オフィス"></a></li>
+          <li><a href="/ai/mountain.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-mt.jpg" alt="山"></a></li>
+          <li><a href="/ai/cyberspace.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-cyber2.jpg" alt="サイバーパンク"></a></li>
+          <li><a href="/ai/ruins.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-ruins.jpg" alt="廃墟"></a></li>
+          <li><a href="/ai/flame.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-fire.jpg" alt="炎"></a></li>
+          <li><a href="/ai/lightleak.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-lightleak.jpg" alt="ライトリーク"></a></li>
+          <li><a href="/ai/light-trail.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-vestigelight.jpg" alt="光跡"></a></li>
+          <li><a href="/ai/hotel.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-hotel.jpg" alt="ホテル"></a></li>
+          <li><a href="/ai/laboratory.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-kagaku.jpg" alt="実験室"></a></li>
+          <li><a href="/ai/cave.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-cave.jpg" alt="洞窟"></a></li>
+          <li><a href="/ai/fabric.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-kiji.jpg" alt="生地"></a></li>
+          <li><a href="/ai/living.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-living.jpg" alt="リビング"></a></li>
+          <li><a href="/ai/partyroom.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/24ai-party.jpg" alt="パーティー"></a></li>
+          <li><a href="/ai/papertexture.html"><img decoding="async" width="120" height="120" src="https://user0514.cdnw.net/shared/img/ai/ais-papertexture.jpg" alt="紙テクスチャ"></a></li>
+        </ul>
+      </li>
+
+      <!-- ③ タグ -->
+      <li class="sp-drawer__item">
+        <div class="sp-drawer__row">
+          <a class="sp-drawer__row-link" href="/tag/">タグ</a>
+          <button class="sp-drawer__toggle" aria-expanded="false" aria-controls="spSubTag"><span class="sp-drawer__arrow" aria-hidden="true"></span></button>
+        </div>
+        <ul id="spSubTag" class="sp-drawer__sub -grid2">
+          <li><a class="sp-drawer__thumb-row" href="/tag/business/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-business.jpg" alt="ビジネス・仕事"><span>ビジネス・仕事</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/lifestyle/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-lifestyle.jpg" alt="日常・生活シーン"><span>日常・生活シーン</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/expression/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-expression.jpg" alt="表情・ポーズ・感情"><span>表情・ポーズ・感情</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/seasonal/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-seasonal.jpg" alt="季節・行事"><span>季節・行事</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/style/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-style.jpg" alt="色・光・質感・テイスト"><span>色・光・質感・テイスト</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/location/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-location.jpg" alt="地域・観光地・名所"><span>地域・観光地・名所</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/occupation/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-occupation.jpg" alt="職業・人物属性"><span>職業・人物属性</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/health/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-health.jpg" alt="健康・美容・スポーツ"><span>健康・美容・スポーツ</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/landscape/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-landscape.jpg" alt="自然・風景・動物"><span>自然・風景・動物</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/place/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-place.jpg" alt="建物・施設・場所"><span>建物・施設・場所</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/tag/gourmet/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/tag/tag-gourmet.jpg" alt="食べ物・飲み物"><span>食べ物・飲み物</span></a></li>
+        </ul>
+      </li>
+
+      <!-- ④ 人気 -->
+      <li class="sp-drawer__item">
+        <div class="sp-drawer__row">
+          <a class="sp-drawer__row-link" href="/selection/">人気</a>
+          <button class="sp-drawer__toggle" aria-expanded="false" aria-controls="spSubPopular"><span class="sp-drawer__arrow" aria-hidden="true"></span></button>
+        </div>
+        <ul id="spSubPopular" class="sp-drawer__popular-grid">
+          <li><a href="/selection/star-selection.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/star-selection.jpg" alt="星空セレクション">星空セレクション</a></li>
+          <li><a href="/selection/springselection.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/sakuraharu.jpg" alt="春の写真まとめ">春の写真まとめ</a></li>
+           <li><a href="/selection/summermatome.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/summerselction.jpg" alt="夏の写真まとめ">夏の写真まとめ</a></li>
+          <li><a href="/selection/autumnselect.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/automn1500top.jpg" alt="秋の写真まとめ">秋の写真まとめ</a></li>
+          <li><a href="/selection/winterselction.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/winter_1500900.jpg" alt="冬の写真まとめ">冬の写真まとめ</a></li>
+          <li><a href="/selection/overseasselection.html"><img decoding="async" width="200" height="113" src="https://user0514.cdnw.net/selection/img/kaigai1500900.jpg" alt="海外の写真まとめ">海外の写真まとめ</a></li>
+        </ul>
+      </li>
+
+      <!-- ⑤ 企画 -->
+      <li class="sp-drawer__item">
+        <div class="sp-drawer__row">
+          <a class="sp-drawer__row-link" href="/event.html">企画</a>
+          <button class="sp-drawer__toggle" aria-expanded="false" aria-controls="spSubKikaku"><span class="sp-drawer__arrow" aria-hidden="true"></span></button>
+        </div>
+        <ul id="spSubKikaku" class="sp-drawer__sub -grid2">
+          <li><a class="sp-drawer__thumb-row" href="/sousei/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/page/img_sousei_thumb.jpg" alt="自治体コラボ"><span>自治体コラボ</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/collabo/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/page/img_collabo_thumb.jpg" alt="企業コラボ"><span>企業コラボ</span></a></li>
+          <li><a class="sp-drawer__thumb-row" href="/project/"><img decoding="async" width="44" height="44" src="https://user0514.cdnw.net/shared/img/page/img_project_thumb.jpg" alt="自主企画"><span>自主企画</span></a></li>
+        </ul>
+      </li>
+
+    </ul><!-- /.sp-drawer__list -->
+
+    <!-- フッター：新着・モデル・カメラマン -->
+    <div class="sp-drawer__footer">
+      <a href="https://www.pakutaso.com/news.html">
+        <i class="fa fa-bell-o" aria-hidden="true"></i>新着
+      </a>
+      <a href="https://www.pakutaso.com/model.html">
+        <i class="fa fa-user-o" aria-hidden="true"></i>モデル
+      </a>
+      <a href="https://www.pakutaso.com/cameraman.html">
+        <i class="fa fa-camera" aria-hidden="true"></i>カメラマン
+      </a>
+    </div>
+
+  </nav>
+</div><!-- /#spDrawer -->
+
+<!-- SP ドロワー オーバーレイ -->
+<div id="spDrawerOverlay" class="sp-drawer__overlay"></div>
+
+</header>
+
+
+<main class="l-main -one">
+<div class="block">
+  <div class="block__content">
+    <div class="notFound">
+
+      <div class="notFound__image">
+        <a href="https://www.pakutaso.com/20190433113post-20605.html">
+          <img alt="鯖くさらかし岩とページを探す女性" src="https://www.pakutaso.com/shared/img/page/404topimage.jpg" width="800" height="533" decoding="async">
+        </a>
+      </div>
+      <p class="notFound__caption"><a href="https://www.pakutaso.com/20190433113post-20605.html">鯖くさらかし岩とページを探す女性（モデル：塩田みう）</a></p>
+
+      <p class="notFound__code"><span>4</span><span>0</span><span>4</span></p>
+      <h1 class="notFound__title">お探しのページは見つかりませんでした</h1>
+
+      <p class="notFound__message">
+        URLが変更・削除されたか、アドレスの入力に誤りがある可能性があります。<br>
+        キーワード検索や以下のリンクからお探しの素材を見つけてください。
+      </p>
+
+      <div class="notFound__search">
+        <div class="search -top">
+          <form class="search__form" action="/search.html" method="GET">
+            <input type="hidden" name="offset" value="0">
+            <input type="hidden" name="limit" value="30">
+            <div class="search__field">
+              <button class="search__submit" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              <input class="search__input" type="search" name="search" placeholder="素材をキーワードで探す">
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</main>
+
+
+</div>
+
+<footer>
+
+<!-- ========================================
+     協賛・サポーター（白背景、l-footer の上）
+     ======================================== -->
+<div class="footerSponsor">
+  <div class="block__content" style="margin-top:20px"> 
+<div class="columns is-variable bd-klmn-columns is-0">
+<div class="column">
+<div class="s-page__heading">協賛・サポーター</div>
+
+
+<div class="columns is-multiline is-mobile is-variable bd-klmn-columns is-3">
+
+
+   
+        <div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://shop.moe-bag.jp" rel="nofollow sponsored">
+      
+                  <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/banner/moe-bag.jpg" type="image/webp">
+      <img loading="lazy" width="200" height="200" src="https://user0514.cdnw.net/shared/img/banner/moe-bag.jpg" alt="こだわりの革のPCバッグ- moe">
+      </picture>
+      
+
+      </a>
+    </div>
+    
+    
+    <div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://libero-en.jp/btob/" rel="nofollow sponsored">
+            <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/banner/kanekobn2024.jpg" type="image/webp">
+      <img loading="lazy" width="400" height="200" src="https://user0514.cdnw.net/shared/img/banner/kanekobn2024.jpg" alt="リベロエンジニア">
+      </picture>
+     </a>
+    </div>
+    
+    
+    
+  
+        <div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://studynow.jp/" rel="nofollow sponsored">      
+      <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/banner/studynow.jpg" type="image/webp">
+      <img loading="lazy" width="200" height="200" src="https://user0514.cdnw.net/shared/img/banner/studynow.jpg" alt="ざっくり英語ニュース！StudyNow（スタディナウ））">
+      </picture>
+   </a>
+    </div>
+
+    
+            <div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://rakkoma.com/?utm_source=pakutaso&utm_medium=display&utm_campaign=pakutaso-banner" rel="nofollow sponsored">
+      <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/banner/rakkoma.jpg" type="image/webp">
+      <img loading="lazy" width="200" height="200" src="https://user0514.cdnw.net/shared/img/banner/rakkoma.jpg" alt="サイト売買はラッコM&A">
+      </picture>
+      </a>
+    </div>
+
+ <div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://onwa-illust.com/" rel="nofollow sponsored">
+      
+      <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/banner/onwa-illust.jpg" type="image/webp">
+      <img loading="lazy" width="200" height="200" src="https://user0514.cdnw.net/shared/img/banner/onwa-illust.jpg" alt="ONWAイラスト">
+      </picture>
+      
+     </a>
+ </div>
+
+
+
+<div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://www.apex106.com/digicam/" rel="nofollow sponsored">
+      
+      <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/page/apex01.jpg" type="image/webp">
+      <img loading="lazy" width="200" height="200" src="https://user0514.cdnw.net/shared/img/page/apex01.jpg" alt="カメラレンタルはAPEX RENTALS">
+      </picture>
+      
+     </a>
+    </div>
+
+
+
+<div class="column is-6-mobile is-2-tablet is-2-desktop photo"> 
+      <a href="https://www.amazon.co.jp/dp/B0FMY3FJJM?tag=susipaku-22" rel="nofollow sponsored">
+      
+      <picture class="card__thumb">
+      <source srcset="https://user0514.cdnw.net/shared/img/banner/pakutaso_airfit.jpg" type="image/webp">
+      <img loading="lazy" width="200" height="200" src="https://user0514.cdnw.net/shared/img/banner/pakutaso_airfit.jpg" alt="エアフィットストレッチャー">
+      </picture>
+      
+     </a>
+    </div>
+
+
+</div>
+
+<p class="align -right" style="margin-top:20px">
+<strong><a href="/supporter_apply.html">協賛・サポーターを募集しています。 ></a></strong>
+</p>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+<!-- ========================================
+     フッターメイン（ダーク背景）
+     ======================================== -->
+<div class="l-footer">
+  <p class="pagetop" id="js-pageTop"><a href="#top">ページトップへ</a></p>
+
+  <!-- フッターナビゲーション -->
+  <nav class="footerNav" id="js-footerNav">
+    <div class="footerNav__block">
+      <div class="footerNav__title">インフォメーション</div>
+      <ul class="footerNav__list">
+        <li class="footerNav__item"><a href="/about.html"><i class="arrow -right"></i>ぱくたそとは</a></li>
+        <li class="footerNav__item"><a href="/freephoto.html"><i class="arrow -right"></i>フリー素材について</a></li>
+        <li class="footerNav__item"><a href="/userpolicy.html"><i class="arrow -right"></i>利用規約</a></li>
+        <li class="footerNav__item"><a href="/faq.html"><i class="arrow -right"></i>よくある質問</a></li>
+        <li class="footerNav__item"><a href="/downloadlogo.html"><i class="arrow -right"></i>ロゴ・広報資料</a></li>
+        <li class="footerNav__item"><a href="/history.html"><i class="arrow -right"></i>これまでの運営と歴史</a></li>
+        <li class="footerNav__item"><a href="/donation.html"><i class="arrow -right"></i>支援・協賛</a></li>
+        <li class="footerNav__item"><a href="/request.html"><i class="arrow -right"></i>素材のリクエスト</a></li>
+      </ul>
+    </div>
+    <div class="footerNav__block">
+      <div class="footerNav__title">所属・関係者</div>
+      <ul class="footerNav__list">
+        <li class="footerNav__item"><a href="/model.html"><i class="arrow -right"></i>モデル一覧</a></li>
+        <li class="footerNav__item"><a href="/cameraman.html"><i class="arrow -right"></i>撮影者一覧</a></li>
+        <li class="footerNav__item"><a href="/unei.html"><i class="arrow -right"></i>運営者一覧</a></li>
+      </ul>
+      <div class="footerNav__title">ブログ</div>
+      <ul class="footerNav__list">
+        <li class="footerNav__item"><a href="/blog/"><i class="arrow -right"></i>ブログトップ</a></li>
+        <li class="footerNav__item"><a href="/blog/information/"><i class="arrow -right"></i>お知らせ</a></li>
+        <li class="footerNav__item"><a href="/blog/location-log/"><i class="arrow -right"></i>ロケーション</a></li>
+      </ul>
+    </div>
+    <div class="footerNav__block">
+      <div class="footerNav__title">企画</div>
+      <ul class="footerNav__list">
+        <li class="footerNav__item"><a href="/sousei/"><i class="arrow -right"></i>自治体コラボ</a></li>
+        <li class="footerNav__item"><a href="/collabo/"><i class="arrow -right"></i>企業コラボ</a></li>
+        <li class="footerNav__item"><a href="/project/"><i class="arrow -right"></i>自主企画</a></li>
+      </ul>
+    </div>
+      <div class="footerNav__block">
+      <div class="footerNav__title">関連サービス</div>
+      <ul class="footerNav__list">
+        <li class="footerNav__item"><a href="https://shop.pakutaso.com/"><i class="arrow -right"></i>ぱくたそショップ</a></li>
+        <li class="footerNav__item"><a href="https://shop.pakutaso.com/collections/preset"><i class="arrow -right"></i>ぱくたそプリセット</a></li>
+        <li class="footerNav__item"><a href="https://oogiri.pakutaso.com/"><i class="arrow -right"></i>ぱくたそ大喜利</a></li>
+      </ul>
+    </div>
+    <div class="footerNav__block -follow">
+      <div class="footerNav__title">フォローしてね！</div>
+      <ul class="footerNav__list -social">
+        <li class="footerNav__item"><a href="https://www.instagram.com/pakutaso_com/" aria-label="Instagram" rel="nofollow"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li class="footerNav__item"><a href="https://x.com/pakutaso_com" aria-label="Twitter" rel="nofollow"><i class="fa fa-x" aria-hidden="true"></i></a></li>
+        <li class="footerNav__item"><a href="https://www.facebook.com/pakutaso" aria-label="Facebook" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li class="footerNav__item"><a href="https://www.youtube.com/@pakususi" aria-label="YouTube" rel="nofollow"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- コピーライト -->
+  <div class="copyright">
+    <div class="copyright__logo"><img decoding="async" loading="lazy" src="https://user0514.cdnw.net/shared/img/site/logo_white.svg" width="200" height="41" alt="使って楽しい、見て楽しい PAKUTASO"></div>
+    <p>ぱくたそは、登録不要で高品質な写真素材・AI画像素材を無料ダウンロードできるフリー素材サイトです。</p>
+    <p><a href="/">日本語トップ</a> / <a href="/en/">English page</a></p>
+    <small style="padding-bottom:120px">&copy;<a href="/">フリー素材サイト「ぱくたそ」</a></small>
+  </div>
+</div>
+</footer>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4QF2T24M68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4QF2T24M68', {
+    'content_group': '404'
+  });
+</script>
+</div>
+</body>
+</html>
