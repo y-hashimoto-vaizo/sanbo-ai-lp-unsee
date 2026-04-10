@@ -398,6 +398,30 @@ img { max-width: 100%; }
   .menu-toggle { display: block; }
   .btn-group { flex-direction: column; }
   .btn { width: 100%; text-align: center; }
+
+  /* チーム 2×2 → 1列 */
+  .team-grid-2x2 { grid-template-columns: 1fr !important; }
+  .team-grid-2x2 > div { padding: 24px !important; }
+
+  /* INPUT/OUTPUT 3列 → 1列 */
+  .io-grid { grid-template-columns: 1fr !important; }
+  .io-grid > div { padding: 20px 16px !important; }
+  .io-num { font-size: 32px !important; }
+
+  /* 業務例 2列 → 1列 */
+  .usage-grid { grid-template-columns: 1fr !important; }
+
+  /* セキュリティ 2列 → 1列 */
+  .security-grid { grid-template-columns: 1fr !important; }
+
+  /* 月5万セクション パディング調整 */
+  .starter-box { padding: 32px 20px !important; }
+
+  /* 無料体験ボックス */
+  .trial-box { padding: 24px 16px !important; }
+
+  /* 送信ボタン */
+  .submit-btn { min-width: auto !important; width: 100% !important; }
 }
 </style>
 </head>
@@ -459,7 +483,7 @@ img { max-width: 100%; }
   <div class="container">
     <p class="section-label text-center">TEAM</p>
     <h2 class="section-title text-center" style="font-size:28px;">このチームが、貴社のAI導入を支えます。</h2>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;">
+    <div class="team-grid-2x2" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;">
 
       <!-- 左上: 橋本 -->
       <div style="padding:32px; border:1px solid #eee; border-radius:12px;">
@@ -755,7 +779,7 @@ img { max-width: 100%; }
     <p class="section-desc text-center">全プラン初期費用0円。まずは無料で試して、効果を見てから広げられます。</p>
 
     <!-- 無料体験 -->
-    <div style="max-width:640px; margin:0 auto 48px; padding:32px; border:2px solid #e67e22; border-radius:12px; text-align:center; background:#fdf8f3;">
+    <div class="trial-box" style="max-width:640px; margin:0 auto 48px; padding:32px; border:2px solid #e67e22; border-radius:12px; text-align:center; background:#fdf8f3;">
       <div style="font-size:13px; letter-spacing:0.1em; color:#e67e22; font-weight:700; margin-bottom:8px;">STEP 0</div>
       <div style="font-size:24px; font-weight:900; margin-bottom:8px;">まずは無料で体験</div>
       <p style="font-size:14px; color:#666; margin-bottom:16px;">登録不要でAI参謀を体験できます。気に入ったら、会社名の入力だけでさらに深くお試しいただけます。</p>
@@ -820,7 +844,7 @@ img { max-width: 100%; }
     </p>
 
     <!-- 5万円でここまでできる -->
-    <div style="max-width:880px; margin:64px auto 0; padding:48px 40px; background:#111; color:#fff; border-radius:12px;">
+    <div class="starter-box" style="max-width:880px; margin:64px auto 0; padding:48px 40px; background:#111; color:#fff; border-radius:12px;">
       <p style="font-size:13px; letter-spacing:0.15em; color:#e67e22; text-align:center; margin-bottom:8px;">STARTER PLAN</p>
       <h3 style="font-size:28px; font-weight:900; text-align:center; margin-bottom:8px;">月5万円で、ここまでできます。</h3>
       <p style="font-size:14px; color:#999; text-align:center; margin-bottom:48px;">「安いけど何もできないんでしょ？」——いいえ。<br>月5万円のスタータープランに含まれる処理量を、具体的な数字でお見せします。</p>
@@ -828,19 +852,19 @@ img { max-width: 100%; }
       <!-- インプット（読む・調べる・相談する） -->
       <div style="margin-bottom:32px;">
         <p style="font-size:11px; letter-spacing:0.15em; color:#e67e22; font-weight:700; margin-bottom:16px;">INPUT — 読む・調べる・相談する</p>
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+        <div class="io-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
           <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
-            <div style="font-size:42px; font-weight:900; color:#fff;">6,000<span style="font-size:16px; color:#888;">回</span></div>
+            <div style="font-size:42px; font-weight:900; color:#fff;" class="io-num"">6,000<span style="font-size:16px; color:#888;">回</span></div>
             <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">経営相談・壁打ち</div>
             <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">毎日200回以上。「この方針で合ってる？」「競合はどう動いてる？」——何度でも。</p>
           </div>
           <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
-            <div style="font-size:42px; font-weight:900; color:#fff;">5,000<span style="font-size:16px; color:#888;">回</span></div>
+            <div style="font-size:42px; font-weight:900; color:#fff;" class="io-num"">5,000<span style="font-size:16px; color:#888;">回</span></div>
             <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">情報検索・市場調査</div>
             <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">業界動向、競合分析、法改正の影響。知りたいことをその場で即回答。</p>
           </div>
           <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
-            <div style="font-size:42px; font-weight:900; color:#fff;">4,000<span style="font-size:16px; color:#888;">回</span></div>
+            <div style="font-size:42px; font-weight:900; color:#fff;" class="io-num"">4,000<span style="font-size:16px; color:#888;">回</span></div>
             <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">データ分析・要約</div>
             <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">売上データの傾向分析、議事録の要点抽出、レポートの要約。</p>
           </div>
@@ -850,19 +874,19 @@ img { max-width: 100%; }
       <!-- アウトプット（作る・書く・生成する） -->
       <div style="margin-bottom:32px;">
         <p style="font-size:11px; letter-spacing:0.15em; color:#e67e22; font-weight:700; margin-bottom:16px;">OUTPUT — 作る・書く・生成する</p>
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+        <div class="io-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
           <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
-            <div style="font-size:42px; font-weight:900; color:#fff;">1,500<span style="font-size:16px; color:#888;">件</span></div>
+            <div style="font-size:42px; font-weight:900; color:#fff;" class="io-num"">1,500<span style="font-size:16px; color:#888;">件</span></div>
             <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">文書・資料の作成</div>
             <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">提案書、報告書、メール文面、マニュアル。毎日50件以上の文書を生成可能。</p>
           </div>
           <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
-            <div style="font-size:42px; font-weight:900; color:#fff;">700<span style="font-size:16px; color:#888;">件</span></div>
+            <div style="font-size:42px; font-weight:900; color:#fff;" class="io-num"">700<span style="font-size:16px; color:#888;">件</span></div>
             <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">企画書・分析レポート</div>
             <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">競合分析、事業計画、採用戦略。骨太な資料も月700件以上作成できます。</p>
           </div>
           <div style="text-align:center; padding:28px 16px; border:1px solid #333; border-radius:8px;">
-            <div style="font-size:42px; font-weight:900; color:#fff;">100<span style="font-size:16px; color:#888;">人</span></div>
+            <div style="font-size:42px; font-weight:900; color:#fff;" class="io-num"">100<span style="font-size:16px; color:#888;">人</span></div>
             <div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:700;">ログイン人数の上限なし</div>
             <p style="font-size:12px; color:#888; margin-top:8px; line-height:1.5;">追加料金なしで社員全員がアクセス。全員が同じ経営方針を共有してAIを利用。</p>
           </div>
@@ -872,7 +896,7 @@ img { max-width: 100%; }
       <!-- 具体的な月間利用イメージ -->
       <div style="padding:24px; background:#1a1a1a; border-radius:8px;">
         <p style="font-size:14px; font-weight:700; margin-bottom:16px; color:#fff;">ある経営者の1ヶ月の利用例：</p>
-        <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:8px 24px;">
+        <div class="usage-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:8px 24px;">
           <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">経営戦略の壁打ち — 毎日10回 × 22日 = 220回</div>
           <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">競合分析レポート — 週1本 × 4週 = 4本</div>
           <div style="font-size:13px; color:#ccc; padding:6px 0; border-bottom:1px solid #333;">提案書・企画書 — 週3本 × 4週 = 12本</div>
@@ -1105,7 +1129,7 @@ img { max-width: 100%; }
       <!-- AWSを採用している組織 -->
       <div style="padding:32px; border:1px solid #333; border-radius:12px; margin-bottom:24px;">
         <h3 style="font-size:18px; font-weight:800; margin-bottom:20px; color:#fff;">AWSで運用されている身近なサービス・機関</h3>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="security-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div style="padding:12px 16px; background:#1a1a1a; border-radius:8px;">
             <div style="font-size:14px; font-weight:700; color:#fff;">三菱UFJ銀行</div>
             <div style="font-size:12px; color:#888;">国内最大手メガバンクの基幹システム</div>
@@ -1225,7 +1249,7 @@ img { max-width: 100%; }
         <textarea class="form-textarea" placeholder="「うちの業務でもAIは使えるのか」「費用感を知りたい」など、何でもお気軽にどうぞ。"></textarea>
       </div>
       <div style="grid-column:1/-1; text-align:center; margin-top:16px;">
-        <button type="submit" class="btn btn-primary" style="min-width:320px; padding:18px 40px; font-size:16px;">無料で相談してみる</button>
+        <button type="submit" class="btn btn-primary submit-btn" style="min-width:320px; padding:18px 40px; font-size:16px;">無料で相談してみる</button>
         <p style="font-size:13px; color:#999; margin-top:12px;">現在多くのお問い合わせをいただいており、ご返信までに2〜3営業日いただく場合がございます。<br>AI導入を本気でご検討中の経営者様を優先的にご案内しております。</p>
       </div>
     </form>
